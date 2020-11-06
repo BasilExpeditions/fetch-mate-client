@@ -1,8 +1,11 @@
+import SwipeCard from './SwipeCard'
+
+import '../App.css'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hi there</h1>
+    <div className="app">
+      <SwipeCard />
     </div>
   );
 }

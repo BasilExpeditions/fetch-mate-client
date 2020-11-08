@@ -1,12 +1,11 @@
-import SwipeCard from './SwipeCard'
+import Navigation from './Navigation'
 
 import '../App.css'
 
 function App() {
   return (
     <div className="app">
-      <SwipeCard />
-      <Location />
+      <Navigation />
     </div>
   );
 }

@@ -1,26 +1,60 @@
 import React, { Component } from 'react'
 import { render } from "react-dom";
+import axios from 'axios';
 
 class Location extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
+  }
+
+  saveLocation(content){
+          console.log(content);
+    }
+
+
+  render(){
+    return (
+      <div>
+        <LocationForm onSubmit={ this.saveLocation }/>
+      </div>
+    );
+  }
+}
+
+class LocationForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postcode: '',
+    };
     this._handleChange = this._handleChange.bind(this);
-    this.componentDidMount =this.componentDidMount.bind(this);
+    this.componentDidMount = this._componentDidMount.bind(this);
+    this._handlePostcode = this._handlePostcode.bind(this);
   }
 
   _handleChange(event) {
       let value = event.target.value;
-      this.setState({[event.target.name]: value
+      this.setState({postcode: value
     });
   }
 
+  _handlePostcode(event) {
+    event.preventDefault();
+    this.props.onSubmit( this.state );
+  }
 
-  componentDidMount(event) {
+  _componentDidMount(event) {
     console.log("something");
       navigator.geolocation.getCurrentPosition(
         function(position) {
-          console.log(position);
+          console.log("Latitude is :", position.coords.latitude);
+          console.log("Longitude is :", position.coords.longitude);
+          const API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en.json`
+          axios.get(API_URL).then((results) =>{
+            console.log(results);
+          });
         },
         function(error){
           console.error("Error Code = " + error.code + " - " + error.message);
@@ -31,10 +65,12 @@ class Location extends Component {
   render(){
     return (
       <div>
-        <h1>Using geolocation Javascript API in React</h1>
-        <input type="text" placeholder="Postcode" onChange={ this._handleChange }/>
-        // <input type="submit" value="Search" />
-        <input type="submit" value="Find near me" onSubmit ={ this.componentDidMount } />
+        <form onSubmit={this._handlePostcode} >
+          <h1>Search Location</h1>
+          <input name="postcode" type="text" placeholder="Postcode" onChange={ this._handleChange }/>
+          <input type="submit" value="Search" />
+        </form>
+        <button onClick={this._componentDidMount}>Find near me</button>
       </div>
     );
   }

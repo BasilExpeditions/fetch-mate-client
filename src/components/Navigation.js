@@ -3,11 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
 
 import Home from './Home'
-import Dashboard from './Dashboard'
+import Connect from './Connect'
 import SwipeCard from './SwipeCard'
 
 
@@ -15,15 +14,19 @@ const Navigation = () => {
   return (
     <Router>
         <Switch>
+
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route path="/swipe">
             <SwipeCard />
           </Route>
+
           <Route path="/connect">
-            <Dashboard />
+            <Connect />
           </Route>
+          
         </Switch>
     </Router>
   )

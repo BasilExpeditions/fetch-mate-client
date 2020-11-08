@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Dashboard = () => {
+const Connect = () => {
   return(
     <h1>You just matched with _____ Send them a message!</h1>
   )
 }
 
-export default Dashboard
+export default Connect

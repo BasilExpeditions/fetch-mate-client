@@ -13,7 +13,6 @@ class Location extends Component {
           console.log(content);
     }
 
-
   render(){
     return (
       <div>

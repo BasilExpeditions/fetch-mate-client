@@ -6,6 +6,7 @@ const Home = () => {
   const user = useContext(UserContext);
   return (
     <div>
+      <h1>Welcome {user.displayName}</h1>
       <button
         onClick={() => {
           auth.signOut();

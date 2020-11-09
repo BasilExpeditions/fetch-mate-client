@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { render } from "react-dom";
 import axios from 'axios';
-import { firestore } from '../firebase';
-import 'firebase/firestore';
+import { auth, firestore } from '../firebase/firebaseindex';
 import * as geofirestore from 'geofirestore';
 
 

@@ -1,11 +1,11 @@
-import Navigation from './Navigation'
-
+import UserProvider from "../providers/UserProvider";
+import Navigation from "./Navigation";
 
 function App() {
   return (
-    <div className="app">
+    <UserProvider>
       <Navigation />
-    </div>
+    </UserProvider>
   );
 }
 

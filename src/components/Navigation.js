@@ -8,6 +8,7 @@ import {
 import Home from './Home'
 import Connect from './Connect'
 import SwipeCard from './SwipeCard'
+import ProfileView from './ProfileView'
 
 
 const Navigation = () => {
@@ -19,14 +20,20 @@ const Navigation = () => {
             <Home />
           </Route>
 
+          <Route exact path="/profile">
+            <ProfileView />
+          </Route>
+
           <Route path="/swipe">
+          <div className="app">
             <SwipeCard />
+          </div>
           </Route>
 
           <Route path="/connect">
             <Connect />
           </Route>
-          
+
         </Switch>
     </Router>
   )

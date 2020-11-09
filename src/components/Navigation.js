@@ -1,42 +1,19 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom'
+import React, { useContext } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { UserContext } from "../providers/UserProvider";
 
-import Home from './Home'
-import Connect from './Connect'
-import SwipeCard from './SwipeCard'
-import Chat from './Messaging/Chat'
-import ProfileView from './ProfileView'
+import Home from "./Home";
+import SignUp from "./users/SignUp";
 
 const Navigation = () => {
-  return (
+  const user = useContext(UserContext);
+  return user ? (
+    <Home />
+  ) : (
     <Router>
-        <Switch>
-
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route exact path="/profile">
-            <ProfileView />
-          </Route>
-
-          <Route path="/swipe">
-          <div className="app">
-            <SwipeCard />
-          </div>
-          </Route>
-
-          <Route path="/connect">
-            <Connect />
-          </Route>
-
-        </Switch>
+      <SignUp />
     </Router>
-  )
-}
+  );
+};
 
 export default Navigation;

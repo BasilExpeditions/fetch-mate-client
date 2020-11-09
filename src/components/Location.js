@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { render } from "react-dom";
 import axios from 'axios';
 import { firestore } from '../firebase';
-import geofirex from 'geofirex';
 
 
 class Location extends Component {
@@ -31,6 +30,8 @@ class LocationForm extends Component {
     super(props);
     this.state = {
       postcode: '',
+      geohash: '',
+      geopoint: ''
     };
     this._handleChange = this._handleChange.bind(this);
     this.componentDidMount = this._componentDidMount.bind(this);
@@ -54,6 +55,12 @@ class LocationForm extends Component {
         function(position) {
           console.log("Latitude is :", position.coords.latitude);
           console.log("Longitude is :", position.coords.longitude);
+
+          const geopoint = (position.coords.latitude, position.coords.longitude);
+          const center = (position.coords.latitude, position.coords.longitude);
+          const radius = 100;
+          const field = 'position';
+
           const API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en.json`
           axios.get(API_URL).then((results) =>{
             console.log("hello", results);

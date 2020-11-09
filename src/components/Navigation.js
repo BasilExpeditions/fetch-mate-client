@@ -8,8 +8,8 @@ import {
 import Home from './Home'
 import Connect from './Connect'
 import SwipeCard from './SwipeCard'
+import Chat from './Messaging/Chat'
 import ProfileView from './ProfileView'
-
 
 const Navigation = () => {
   return (

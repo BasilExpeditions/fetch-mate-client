@@ -9,7 +9,7 @@ import Home from './Home'
 import Connect from './Connect'
 import SwipeCard from './SwipeCard'
 import Chat from './Messaging/Chat'
-
+import ProfileView from './ProfileView'
 
 const Navigation = () => {
   return (
@@ -20,8 +20,14 @@ const Navigation = () => {
             <Home />
           </Route>
 
+          <Route exact path="/profile">
+            <ProfileView />
+          </Route>
+
           <Route path="/swipe">
+          <div className="app">
             <SwipeCard />
+          </div>
           </Route>
 
           <Route path="/connect">

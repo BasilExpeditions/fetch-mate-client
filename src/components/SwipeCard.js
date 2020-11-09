@@ -9,6 +9,8 @@ import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
 
+import '../App.css'
+
 const db = [
   {
     name: 'Penelope Jr',

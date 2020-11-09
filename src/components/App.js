@@ -3,9 +3,9 @@ import Navigation from "./Navigation";
 
 function App() {
   return (
-    <UserProvider>
+    // <UserProvider>
       <Navigation />
-    </UserProvider>
+    // </UserProvider>
   );
 }
 

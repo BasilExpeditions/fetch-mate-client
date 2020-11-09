@@ -11,10 +11,10 @@ import '../../App.css';
 
 import firebase from 'firebase/app';
 
-import { auth, firestore } from '../../firebase/firebaseindex';
+import { auth, firestore } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import firebaseConfig from '../../firebase/firebaseindex';
+import firebaseConfig from '../../firebase/firebase';
 
 function Chat() {
   const [user] = useAuthState(auth); // show button to sign in. Signed in, user is an object. Signed out, user is null

@@ -8,6 +8,7 @@ import {
 import Home from './Home'
 import Connect from './Connect'
 import SwipeCard from './SwipeCard'
+import Chat from './Messaging/Chat'
 
 
 const Navigation = () => {
@@ -26,7 +27,7 @@ const Navigation = () => {
           <Route path="/connect">
             <Connect />
           </Route>
-          
+
         </Switch>
     </Router>
   )

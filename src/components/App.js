@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 
 function App() {
   return (
-    <div className="">
+    <div className="app">
       <Navigation />
     </div>
   );

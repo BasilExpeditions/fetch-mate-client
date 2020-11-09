@@ -27,6 +27,10 @@
   flex-direction: row !important;
 }
 
+.editInput {
+  margin: 1em;
+}
+
 .row>* {
   margin: 5px;
 }

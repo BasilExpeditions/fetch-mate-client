@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { render } from "react-dom";
 import axios from 'axios';
 import { firestore } from '../firebase';
+import 'firebase/firestore';
+import * as geofirestore from 'geofirestore';
 
 
 class Location extends Component {
@@ -56,10 +58,7 @@ class LocationForm extends Component {
           console.log("Latitude is :", position.coords.latitude);
           console.log("Longitude is :", position.coords.longitude);
 
-          const geopoint = (position.coords.latitude, position.coords.longitude);
-          const center = (position.coords.latitude, position.coords.longitude);
-          const radius = 100;
-          const field = 'position';
+
 
           const API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en.json`
           axios.get(API_URL).then((results) =>{
@@ -86,4 +85,16 @@ class LocationForm extends Component {
   }
 }
 
+
 export default Location;
+
+// export const createProject = (location) => {
+//   return (dispatch, getState, {getFirebase, getFirestore}) => {
+//     const firestore = getFirestore();
+//     firestore.collection('location').add({
+//       postcode: 2047;
+//       createdAt: new Data()
+//     })
+//     dispatch({type: 'CREATE_PROJECT', location});
+//   }
+// };

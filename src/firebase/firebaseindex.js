@@ -24,11 +24,3 @@ export const firestore = firebase.firestore();
 export default {
   firebaseConfig,
 }
-
-// import firebase from 'firebase/app';
-// import 'firebase/firestore';
-// import 'firebase/auth'; // for user authentication
-//
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import { useCollectionData } from 'react-firebase-hooks/firestore';
-// import { initializeApp } from

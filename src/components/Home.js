@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
+
+import SwipeCard from "./SwipeCard";
 import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import SwipeCard from "./SwipeCard";
 
 const Home = () => {
-  SaveCurrentLocation();
   const user = useContext(UserContext);
   return (
     <div>
@@ -27,5 +28,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

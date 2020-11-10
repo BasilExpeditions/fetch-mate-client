@@ -7,7 +7,11 @@ import {
 } from "../../firebase/firebase";
 
 const SignUp = (props) => {
-  const [inputs, setInputs] = useState({ email: "", password: "" });
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    displayName: "",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +20,7 @@ const SignUp = (props) => {
         inputs.email,
         inputs.password
       );
-      generateUserDocument(user);
+      generateUserDocument(user, { displayName: inputs.displayName });
       this.props.history.push("/");
       console.log("user created");
     } catch (error) {
@@ -32,6 +36,7 @@ const SignUp = (props) => {
   return (
     <div className="signUpContainer">
       <form onSubmit={handleSubmit}>
+
 
         <div>
           <input className="input-container"
@@ -51,6 +56,29 @@ const SignUp = (props) => {
               onChange={handleChange}
             />
         </div>
+
+
+        <input
+          type="text"
+          name="displayName"
+          placeholder="John Citizen"
+          value={inputs.displayName}
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="example@domain.com"
+          value={inputs.email}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={inputs.password}
+          onChange={handleChange}
+        />
 
         <button type="submit">Sign Up</button>
       </form>

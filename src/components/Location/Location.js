@@ -22,7 +22,6 @@ class Location extends Component {
     // const dbRef = db.ref().child('data');
     }
 
-
   render(){
     return (
       <div>

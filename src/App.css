@@ -1,11 +1,31 @@
+.signOutButton {
+
+}
+
+.inputContainer {
+  position:relative;
+	margin-bottom:25px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.child {
+  width: 400px;
+  height: 550px;
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%)
+}
+
 #root {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
   overflow: hidden;
-  /* background: linear-gradient(#fff, #999); */
   background: linear-gradient(#e66465, #9198e5);
 }
 
@@ -22,6 +42,7 @@
   justify-content: center;
   align-items: center;
 }
+
 
 .row {
   flex-direction: row !important;

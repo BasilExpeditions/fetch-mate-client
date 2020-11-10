@@ -34,34 +34,54 @@ const SignUp = (props) => {
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="displayName"
-          placeholder="John Citizen"
-          value={inputs.displayName}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="example@domain.com"
-          value={inputs.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={inputs.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
 
-      <button onClick={signInWithGoogle}>Continue With Google</button>
-    </>
+          <input
+            type="email"
+            name="email"
+            placeholder="example@domain.com"
+            value={inputs.email}
+            onChange={handleChange}
+          />
+
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={inputs.password}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="displayName"
+              placeholder="John Citizen"
+              value={inputs.displayName}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="example@domain.com"
+              value={inputs.email}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={inputs.password}
+              onChange={handleChange}
+            />
+
+            <button type="submit">Sign Up</button>
+            
+          </form>
+
+        <button onClick={signInWithGoogle}>Continue With Google</button>
+
+    </div>
   );
 };
 

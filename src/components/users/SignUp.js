@@ -30,27 +30,35 @@ const SignUp = (props) => {
   };
 
   return (
-    <>
+    <div className="signUpContainer">
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="example@domain.com"
-          value={inputs.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={inputs.password}
-          onChange={handleChange}
-        />
+
+        <div>
+          <input className="input-container"
+            type="email"
+            name="email"
+            placeholder="example@domain.com"
+            value={inputs.email}
+            onChange={handleChange}
+          />
+        </div>
+          <div>
+            <input className="input-container"
+              type="password"
+              name="password"
+              placeholder="password"
+              value={inputs.password}
+              onChange={handleChange}
+            />
+        </div>
+
         <button type="submit">Sign Up</button>
       </form>
 
-      <button onClick={signInWithGoogle}>Continue With Google</button>
-    </>
+      <div>
+        <button onClick={signInWithGoogle}>Continue With Google</button>
+      </div>
+    </div>
   );
 };
 

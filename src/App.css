@@ -1,3 +1,35 @@
+
+
+.signUpContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%)
+}
+
+.inputContainer {
+  position:relative;
+	margin-bottom:25px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.child {
+  width: 400px;
+  height: 550px;
+  background-color: grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%)
+}
+
+/*
 #root {
   text-align: center;
   display: flex;
@@ -5,7 +37,6 @@
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
-  /* background: linear-gradient(#fff, #999); */
   background: linear-gradient(#e66465, #9198e5);
 }
 
@@ -162,3 +193,4 @@ img {
   64%  { transform: scale(1,1) }
   100% { transform: scale(1,1) }
 }
+*/

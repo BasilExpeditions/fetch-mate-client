@@ -1,45 +1,40 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {
   auth,
   signInWithGoogle,
   generateUserDocument,
 } from "../../firebase/firebase";
-const SignUp = (props) => {
+
+const SignIn = (props) => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
-    displayName: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
+      const { user } = await auth.signInWithEmailAndPassword(
         inputs.email,
         inputs.password
       );
-      generateUserDocument(user, { displayName: inputs.displayName });
+      generateUserDocument(user);
       this.props.history.push("/");
       console.log("user created");
     } catch (error) {
       console.log(error.message);
     }
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="displayName"
-          placeholder="John Citizen"
-          value={inputs.displayName}
-          onChange={handleChange}
-        />
         <input
           type="email"
           name="email"
@@ -54,10 +49,13 @@ const SignUp = (props) => {
           value={inputs.password}
           onChange={handleChange}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign In</button>
       </form>
+
       <button onClick={signInWithGoogle}>Continue With Google</button>
+      <Link to="/signup">Sign Up</Link>
     </>
   );
 };
-export default withRouter(SignUp);
+
+export default withRouter(SignIn);

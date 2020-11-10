@@ -8,14 +8,21 @@ const Home = () => {
   const user = useContext(UserContext);
   return (
     <div>
-      <h1>Welcome {user.displayName}</h1>
-      <button
-        onClick={() => {
-          auth.signOut();
-        }}
-      >
-        Sign out
-      </button>
+      <div className="container">
+        <div className="child">
+          <h4>
+            Welcome {user.displayName}
+            <button
+              onClick={() => {
+                auth.signOut();
+              }}
+            >
+              Sign out
+            </button>
+          </h4>
+          <SwipeCard />
+        </div>
+      </div>
     </div>
   );
 };

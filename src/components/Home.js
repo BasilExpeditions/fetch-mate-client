@@ -5,6 +5,7 @@ import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import SwipeCard from "./SwipeCard";
 
 const Home = () => {
+  SaveCurrentLocation();
   const user = useContext(UserContext);
   return (
     <div>

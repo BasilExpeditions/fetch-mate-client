@@ -5,10 +5,8 @@ import {
   signInWithGoogle,
   generateUserDocument,
 } from "../../firebase/firebase";
-
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,12 +21,10 @@ const SignUp = (props) => {
       console.log(error.message);
     }
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
-
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -48,10 +44,8 @@ const SignUp = (props) => {
         />
         <button type="submit">Sign Up</button>
       </form>
-
       <button onClick={signInWithGoogle}>Continue With Google</button>
     </>
   );
 };
-
 export default withRouter(SignUp);

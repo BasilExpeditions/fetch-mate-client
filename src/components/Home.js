@@ -6,7 +6,7 @@ import GetNearbyUsers from "./navigation/GetNearbyUsers";
 import SwipeCard from "./SwipeCard";
 
 const Home = () => {
-  SaveCurrentLocation();
+  // SaveCurrentLocation();
   // GetNearbyUsers();
 
   const user = useContext(UserContext);

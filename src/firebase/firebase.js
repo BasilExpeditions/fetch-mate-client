@@ -11,7 +11,9 @@ const config = {
   appId: process.env.REACT_APP_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
+
 const provider = new firebase.auth.GoogleAuthProvider();
+
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
   const userRef = firestore.doc(`users/${user.uid}`);
@@ -43,12 +45,15 @@ const getUserDocument = async (uid) => {
     console.error("Error fetching user", error);
   }
 };
+
 firebase.initializeApp(config);
+
 export const auth = firebase.auth();
+
 export const firestore = firebase.firestore();
 
 export const signInWithGoogle = () => {
   auth.signInWithPopup(provider);
 };
 
-export default { config };
+export { config };

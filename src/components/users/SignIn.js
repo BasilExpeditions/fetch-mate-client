@@ -20,8 +20,8 @@ const SignIn = (props) => {
         inputs.password
       );
       generateUserDocument(user);
+      console.log("user signed in");
       this.props.history.push("/");
-      console.log("user created");
     } catch (error) {
       console.log(error.message);
     }

@@ -8,16 +8,6 @@ const SaveCurrentLocation = (event) => {
   const firestore = firebase.firestore();
   const GeoFirestore = geofirestore.initializeApp(firestore);
   const geoCollection = GeoFirestore.collection(`users`);
-  // navigator.geolocation.getCurrentPosition(function (position) {
-  //   let lat = position.coords.latitude;
-  //   let long = position.coords.longitude;
-  // });
-
-  var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
 
   function success(pos) {
     var crd = pos.coords;
@@ -25,21 +15,22 @@ const SaveCurrentLocation = (event) => {
     console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
+    geoCollection
+      .doc(user)
+      .collection("Information")
+      .doc("location")
+      .set({
+        coordinates: new firebase.firestore.GeoPoint(
+          crd.latitude,
+          crd.longitude
+        ),
+      });
   }
 
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
-  geoCollection
-    .doc(user)
-    .collection("Information")
-    .doc("location")
-    .set({
-      coordinates: new firebase.firestore.GeoPoint(1, 2),
-    });
+  navigator.geolocation.getCurrentPosition(success, error);
 };
 
 export default SaveCurrentLocation;

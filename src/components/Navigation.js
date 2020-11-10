@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { UserContext } from "../providers/UserProvider";
 
 import Home from "./Home";
+import SignIn from "./users/SignIn";
 import SignUp from "./users/SignUp";
 
 const Navigation = () => {
@@ -10,9 +11,10 @@ const Navigation = () => {
   return user ? (
     <Home />
   ) : (
-    <Router>
-      <SignUp />
-    </Router>
+    <Switch>
+      <Route exact path="/" component={SignIn} />
+      <Route exact path="/signup" component={SignUp} />
+    </Switch>
   );
 };
 

@@ -20,14 +20,14 @@ function Chat() {
   const [user] = useAuthState(auth); // show button to sign in. Signed in, user is an object. Signed out, user is null
   return (
     <div className="App">
-      <header>
-        <h1>Fetch Chatmate</h1>
-        <SignOut />
-      </header>
-      <section>
-        {user ? <ChatRoom /> : <SignIn />} // if user is logging in, show
-        ChatRoom, else, show Sign in page
-      </section>
+    <header>
+    <h1>Fetch Chatmate</h1>
+    <SignOut />
+    </header>
+    <section>
+    {user ? <ChatRoom /> : <SignIn />} // if user is logging in, show
+    ChatRoom, else, show Sign in page
+    </section>
     </div>
   );
 }
@@ -40,12 +40,12 @@ function SignIn() {
 
   return (
     <div>
-      <button className="sign-in" onClick={signInWithGoogle}>
-        Sign in with Google
-      </button>
-      <p>
-        Do not violate the community guidelines or you will be banned for life!
-      </p>
+    <button className="sign-in" onClick={signInWithGoogle}>
+    Sign in with Google
+    </button>
+    <p>
+    Do not violate the community guidelines or you will be banned for life!
+    </p>
     </div>
   );
 }
@@ -54,7 +54,7 @@ function SignOut() {
   return (
     auth.currentUser && ( // check for current user and display button
       <button className="sign-out" onClick={() => auth.signOut()}>
-        Sign Out
+      Sign Out
       </button>
     )
   );
@@ -89,45 +89,45 @@ function ChatRoom() {
 
   return (
     <div>
-      <main>
-        // Array over messages // Loop over each each document, with dedicated
-        chat message component that has a key prop with a message id, that
-        passes the document data as the message prop.
-        {messages &&
-          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
-        <span ref={dummy}></span>
+    <main>
+    // Array over messages // Loop over each each document, with dedicated
+    chat message component that has a key prop with a message id, that
+    passes the document data as the message prop.
+    {messages &&
+      messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+      <span ref={dummy}></span>
       </main>
       // Make input form for chat messages // write value to firestore // Bind
       state to form input
       <form onSubmit={sendMessage}>
-        <input
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="Say something you won't regret"
-        />
-        <button type="submit" disabled={!formValue}>
-          Send
-        </button>
+      <input
+      value={formValue}
+      onChange={(e) => setFormValue(e.target.value)}
+      placeholder="Say something you won't regret"
+      />
+      <button type="submit" disabled={!formValue}>
+      Send
+      </button>
       </form>
-    </div>
-  );
-}
-
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
-  return (
-    <div>
-      <div className={`message ${messageClass}`}>
-        <img
-          src={
-            photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
-          }
-        />
-        <p>{text}</p>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-export default Chat;
+  function ChatMessage(props) {
+    const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
+    const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
+    return (
+      <div>
+      <div className={`message ${messageClass}`}>
+      <img
+      src={
+        photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
+      }
+      />
+      <p>{text}</p>
+      </div>
+      </div>
+    );
+  }
+
+  export default Chat;

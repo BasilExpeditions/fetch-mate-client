@@ -3,17 +3,23 @@ import { render } from "react-dom";
 import axios from 'axios';
 import { auth, firestore } from '../firebase/firebase';
 import * as geofirestore from 'geofirestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 class Location extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      postcode: '',
+      geohash: '',
+      geopoint: ''
     };
   }
 
   saveLocation(content){
-          console.log(content);
+    // const db = firebase.database();
+    // const dbRef = db.ref().child('data');
     }
 
 
@@ -84,10 +90,9 @@ class LocationForm extends Component {
   }
 }
 
-
 export default Location;
 
-// export const createProject = (location) => {
+// export const createLocation = (location) => {
 //   return (dispatch, getState, {getFirebase, getFirestore}) => {
 //     const firestore = getFirestore();
 //     firestore.collection('location').add({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from "react-dom";
 import axios from 'axios';
-import { auth, firestore } from '../firebase/firebase';
+import { auth, firestore } from '../../firebase/firebase';
 import * as geofirestore from 'geofirestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';

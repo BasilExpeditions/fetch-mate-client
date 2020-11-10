@@ -1,16 +1,39 @@
+// import React, { Component, useContext, useState } from 'react'
+
 import React, { Component } from 'react'
 import { render } from "react-dom";
 import axios from 'axios';
-import { auth, firestore } from '../../firebase/firebase';
+// import { auth, firestore, firebase } from '../../firebase/firebase';
+import * as firebase from '../../firebase/firebase';
+import 'firebase/firestore';
 import * as geofirestore from 'geofirestore';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { UserContext } from "../../providers/UserProvider";
+
+
+// const saveLocation = (props) =>{
+//
+//
+//   const firestore = firebase.firestore();
+//
+//   return (
+//     <div>
+//       <h1>Woooooooo</h1>
+//     </div>
+//   );
+//   // const [location, setLocation] = useState({
+//   //   geohash: '',
+//   //   geopoint: [],
+//   // });
+//
+// }
 
 
 class Location extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state ={
       postcode: '',
       geohash: '',
       geopoint: ''
@@ -18,8 +41,18 @@ class Location extends Component {
   }
 
   saveLocation(content){
-    // const db = firebase.database();
-    // const dbRef = db.ref().child('data');
+
+    const firestore = firebase.firestore();
+    const GeoFirestore = geofirestore.initializeApp(firestore);
+    const geocollection = GeoFirestore.collection('pets');
+
+    geocollection.add({
+  name: 'Geofirestore',
+  score: 100,
+  // The coordinates field must be a GeoPoint!
+  coordinates: new firebase.firestore.GeoPoint(40.7589, -73.9851)
+})
+
     }
 
   render(){
@@ -36,8 +69,8 @@ class LocationForm extends Component {
     super(props);
     this.state = {
       postcode: '',
-      geohash: '',
-      geopoint: ''
+      // geohash: '',
+      // geopoint: [],
     };
     this._handleChange = this._handleChange.bind(this);
     this.componentDidMount = this._componentDidMount.bind(this);
@@ -61,7 +94,6 @@ class LocationForm extends Component {
         function(position) {
           console.log("Latitude is :", position.coords.latitude);
           console.log("Longitude is :", position.coords.longitude);
-
 
 
           const API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en.json`

@@ -10,7 +10,6 @@
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "firebase": "^8.0.1",
-    "geofire": "^5.0.1",
     "geofirestore": "^4.3.0",
     "geofirex": "^0.1.0",
     "react": "^17.0.1",

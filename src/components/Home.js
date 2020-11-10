@@ -7,7 +7,7 @@ import SwipeCard from "./SwipeCard";
 
 const Home = () => {
   SaveCurrentLocation();
-  GetNearbyUsers();
+  // GetNearbyUsers();
 
   const user = useContext(UserContext);
   return (

@@ -7,7 +7,7 @@ const SaveCurrentLocation = (event) => {
   const user = useContext(UserContext).uid;
   const firestore = firebase.firestore();
   const GeoFirestore = geofirestore.initializeApp(firestore);
-  const geoCollection = GeoFirestore.collection(`users`);
+  const geoCollection = GeoFirestore.collection("users");
 
   function success(pos) {
     var crd = pos.coords;
@@ -15,16 +15,9 @@ const SaveCurrentLocation = (event) => {
     console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
-    geoCollection
-      .doc(user)
-      .collection("Information")
-      .doc("location")
-      .set({
-        coordinates: new firebase.firestore.GeoPoint(
-          crd.latitude,
-          crd.longitude
-        ),
-      });
+    geoCollection.doc(user).set({
+      coordinates: new firebase.firestore.GeoPoint(crd.latitude, crd.longitude),
+    });
   }
 
   function error(err) {

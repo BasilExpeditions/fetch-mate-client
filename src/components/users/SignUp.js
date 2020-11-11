@@ -5,7 +5,6 @@ import {
   signInWithGoogle,
   generateUserDocument,
 } from "../../firebase/firebase";
-
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -27,12 +26,10 @@ const SignUp = (props) => {
       console.log(error.message);
     }
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -67,5 +64,4 @@ const SignUp = (props) => {
     </div>
   );
 };
-
 export default withRouter(SignUp);

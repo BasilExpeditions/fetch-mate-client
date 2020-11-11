@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
-
+import GetNearbyUsers from './navigation/GetNearbyUsers'
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
@@ -11,10 +11,23 @@ import doggo3 from './img/doggo3.jpg'
 
 import '../App.css'
 
+
+// Use collection of user data into db variable
+const fetchNearBy =(user) => {
+
+  return (
+
+    <GetNearbyUsers />
+  );
+
+}
+
+
 const db = [
   {
     name: 'Penelope Jr',
     url: kitty1
+
   },
   {
     name: 'Cooper',
@@ -65,6 +78,7 @@ function SwipeCard () {
     }
   }
 
+
   return (
     <div>
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
@@ -76,6 +90,7 @@ function SwipeCard () {
             <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
               <h3>{character.name}</h3>
             </div>
+          {GetNearbyUsers()}
           </TinderCard>
         )}
       </div>

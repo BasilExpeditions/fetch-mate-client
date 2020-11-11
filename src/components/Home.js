@@ -4,6 +4,7 @@ import { UserContext } from "../providers/UserProvider";
 import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import GetNearbyUsers from "./navigation/GetNearbyUsers";
 import SwipeCard from "./SwipeCard";
+import Chat from "./Messaging/Chat";
 
 const Home = () => {
   SaveCurrentLocation();

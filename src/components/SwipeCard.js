@@ -3,6 +3,7 @@ import React, { useState, useMemo, Component } from 'react'
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
 import GetNearbyUsers from './navigation/GetNearbyUsers'
+import SaveCurrentLocation from './navigation/SaveCurrentLocation'
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
@@ -43,10 +44,18 @@ function SwipeCard () {
   const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
   const [users, setUsers] = useState([])
+  const [saveUser, setSaveUser] = useState()
+
+  //we need to save the current logged in User location before fetching all users in the same radius ( fetchUsers() )
+  function saveUsers (result) {
+    SaveCurrentLocation(result).then(setSaveUser(...saveUser, result))
+  }
 
   function fetchUsers (result) {
     GetNearbyUsers(result).then(setUsers(...users, result))
   }
+
+
 
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 

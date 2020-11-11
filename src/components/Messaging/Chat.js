@@ -36,7 +36,7 @@ const ChatRoom = () => {
   };
 
   return (
-    <div>
+    <div className="container-message">
       <main>
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}

@@ -34,28 +34,29 @@ const SignIn = (props) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input
+    <div className="container-signin">
+        <h1>Fetchmate</h1>
+      <form className="signin" onSubmit={handleSubmit}>
+        <input className="signin-input"
           type="email"
           name="email"
           placeholder="example@domain.com"
           value={inputs.email}
           onChange={handleChange}
         />
-        <input
+        <input className="signin-input"
           type="password"
           name="password"
           placeholder="password"
           value={inputs.password}
           onChange={handleChange}
         />
-        <button type="submit">Sign In</button>
+        <button className="signin-button" type="submit">Sign In</button>
       </form>
 
-      <button onClick={signInWithGoogle}>Continue With Google</button>
+      <button className="google-login-button" onClick={signInWithGoogle}>Continue With Google</button>
       <Link to="/signup">Sign Up</Link>
-    </>
+    </div>
   );
 };
 

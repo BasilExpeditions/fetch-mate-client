@@ -86,10 +86,10 @@ function SwipeCard () {
 
 
   return (
-    <div>
+    <div className="container-swipecard">
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
       <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>FetchMate</h1>
+      <h1>Fetchmate</h1>
       <div className='cardContainer'>
         {characters.map((character, index) =>
           <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
@@ -100,8 +100,8 @@ function SwipeCard () {
         )}
       </div>
       <div className='buttons'>
-        <button onClick={() => swipe('left')}>Swipe left!</button>
-        <button onClick={() => swipe('right')}>Swipe right!</button>
+        <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+        <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
       </div>
       {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
     </div>

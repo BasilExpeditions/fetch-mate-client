@@ -47,8 +47,10 @@ function SwipeCard () {
   const [saveUser, setSaveUser] = useState()
 
   //we need to save the current logged in User location before fetching all users in the same radius ( fetchUsers() )
+
+  //How to get saveUsers to fire before fetchUsers
   function saveUsers (result) {
-    SaveCurrentLocation(result).then(setSaveUser(...saveUser, result))
+  SaveCurrentLocation(result).then(setSaveUser(...saveUser, result))
   }
 
   function fetchUsers (result) {

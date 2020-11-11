@@ -10,8 +10,8 @@ import SwipeCard from "./SwipeCard";
 const Navigation = () => {
   const user = useContext(UserContext);
   return user ? (
-    // <Home />
-    <Route exact path="/swipe" component={SwipeCard} />
+    <Home />
+    // <Route exact path="/swipe" component={SwipeCard} />
   ) : (
     <Switch>
         <Route exact path="/" component={SignIn} />

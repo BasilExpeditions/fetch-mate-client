@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, Component } from 'react'
 
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
@@ -10,17 +10,6 @@ import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
 
 import '../App.css'
-
-
-// Use collection of user data into db variable
-const fetchNearBy =(user) => {
-
-  return (
-
-    <GetNearbyUsers />
-  );
-
-}
 
 
 const db = [
@@ -51,8 +40,13 @@ const alredyRemoved = []
 let charactersState = db // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
 function SwipeCard () {
-  const [characters, setCharacters] = useState(db)
+  const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
+  const [users, setUsers] = useState([])
+
+  function fetchUsers (result) {
+    GetNearbyUsers(result).then(setUsers(...users, result))
+  }
 
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 
@@ -79,6 +73,7 @@ function SwipeCard () {
   }
 
 
+
   return (
     <div>
       <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
@@ -90,7 +85,6 @@ function SwipeCard () {
             <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
               <h3>{character.name}</h3>
             </div>
-          {GetNearbyUsers()}
           </TinderCard>
         )}
       </div>

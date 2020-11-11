@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyDaSgA8grdX3iJn7cTJ9jXkI4PqFKrszNk",
   authDomain: "test1-57cd1.firebaseapp.com",
   databaseURL: "https://test1-57cd1.firebaseio.com",
@@ -12,9 +12,6 @@ const firebaseConfig = {
   appId: "1:514013619111:web:e8a41e821af57bcd56cc82",
   measurementId: "G-C26N7B5N59",
 };
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -56,11 +53,10 @@ const getUserDocument = async (uid) => {
   }
 };
 
+firebase.initializeApp(config);
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
 export const signInWithGoogle = () => {
   auth.signInWithPopup(provider);
 };
-
-export default firebaseConfig;

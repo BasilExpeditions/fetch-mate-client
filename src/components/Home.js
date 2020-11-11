@@ -1,33 +1,30 @@
 import React, { useContext } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
-import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
-import GetNearbyUsers from "./navigation/GetNearbyUsers";
-import SwipeCard from "./SwipeCard";
+
 import Chat from "./Messaging/Chat";
 
+// import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
+// import GetNearbyUsers from "./navigation/GetNearbyUsers";
+
 const Home = () => {
-  SaveCurrentLocation();
-  GetNearbyUsers();
+  // SaveCurrentLocation();
+  // GetNearbyUsers();
 
   const user = useContext(UserContext);
   return (
     <div>
-      <div className="container">
-        <div className="child">
-          <h4>
-            Welcome {user.displayName}
-            <button
-              onClick={() => {
-                auth.signOut();
-              }}
-            >
-              Sign out
-            </button>
-          </h4>
-          <SwipeCard />
-        </div>
-      </div>
+      <h4>
+        Welcome {user.displayName}
+        <button
+          onClick={() => {
+            auth.signOut();
+          }}
+        >
+          Sign out
+        </button>
+      </h4>
+      <Chat />
     </div>
   );
 };

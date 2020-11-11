@@ -14,13 +14,14 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const { user } = await auth.signInWithEmailAndPassword(
         inputs.email,
         inputs.password
       );
-      generateUserDocument(user);
       console.log("user signed in");
+      generateUserDocument(user);
       this.props.history.push("/");
     } catch (error) {
       console.log(error.message);

@@ -16,7 +16,7 @@ const ChatRoom = () => {
   // Reference a firestore collection - display on firestore everytime someone messages
   const messagesRef = firestore.collection("messages");
   // Make query documents in a collection
-  const query = messagesRef.orderBy("createdAt").limit(25);
+  const query = messagesRef.orderBy("createdAt").limit(1000);
   const [messages] = useCollectionData(query, { idField: "id" }); // Used collection data hook
   const [formValue, setFormValue] = useState(""); // stateful value to the formValue component, store as an empty string
 

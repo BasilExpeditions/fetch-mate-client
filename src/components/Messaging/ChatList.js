@@ -3,4 +3,4 @@
 // Display name, avatar, preview of last/new message
 // Display new matchesn
 
-import { auth } from '../../firebase'
+// import { auth } from '../../firebase'

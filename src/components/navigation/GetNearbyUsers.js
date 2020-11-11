@@ -23,7 +23,6 @@ const GetNearbyUsers = (event) => {
       console.log(value.docs);
       //reference in SwipeCard(console.log for testing)
       const nearByUsers = value.docs.map( u => u.id);
-      // console.log(u);
       console.log(nearByUsers);
     });
   });

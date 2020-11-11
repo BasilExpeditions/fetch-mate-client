@@ -11,6 +11,7 @@ const Home = () => {
   SaveCurrentLocation();
   GetNearbyUsers();
 
+
   const user = useContext(UserContext);
   return (
     <div>

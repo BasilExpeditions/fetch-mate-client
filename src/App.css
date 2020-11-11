@@ -1,185 +1,150 @@
-.signOutButton {
-
+body {
+  background-color: #282c34;
 }
-
-.inputContainer {
-  position:relative;
-	margin-bottom:25px;
+a {
+  text-decoration: none;
+  color: whitesmoke;
 }
-
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.child {
-  width: 400px;
-  height: 550px;
-  position: absolute;
-  text-align: left;
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%, -50%)
-}
-
-#root {
+.App {
   text-align: center;
-  overflow: hidden;
-  background: linear-gradient(#e66465, #9198e5);
+  max-width: 728px;
+  margin: 0 auto;
 }
 
-#root>div {
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  min-height: 50px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.App section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(40, 37, 53);
 }
 
-.app>div {
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-
-.row {
-  flex-direction: row !important;
+main::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-.editInput {
-  margin: 1em;
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
 }
 
-.row>* {
-  margin: 5px;
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
 }
 
-h1 {
-  font-family: 'Damion', cursive;
-  color: #fff;
-  text-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+form {
+  height: 10vh;
+  background-color: rgb(24, 23, 23);
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  font-size: 1.5rem;
 }
 
-h2 {
-  color: #fff;
+form button {
+  width: 20%;
+  background-color: rgb(56, 56, 143);
 }
 
-.swipe {
-  position: absolute;
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: rgb(58, 58, 58);
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
 }
 
-.cardContainer {
-  width: 90vw;
-  max-width: 260px;
-  height: 300px;
+button {
+  background-color: #282c34; /* Green */
+  border: 3px solid white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
 }
 
-.card {
-  position: relative;
-  background-color: #fff;
-  width: 80vw;
-  max-width: 200px;
-  height: 200px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-
-
-.container {
+.sign-in {
+  color: #282c34;
+  background: white;
   max-width: 400px;
-  height: 300px;
-  background-color: red;
+  margin: 0 auto;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
- }
-
-.card {
-    flex: 1 0 500px;
-    box-sizing: border-box;
-    margin: 1rem .25em;
+ul,
+li {
+  text-align: left;
+  list-style: none;
 }
 
-.profileImgCard {
-    display: flex;
-    justify-content: space-between;
-    background-: #fff;
-    width: 40vw;
-    max-width: 130px;
-    height: 150px;
-    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: #0b93f6;
+  align-self: flex-end;
+}
+.received p {
+  background: #e5e5ea;
+  color: black;
 }
 
 img {
-  border-radius: 20px;
-}
-
-.cardContent {
-  width: 100%;
-  height: 100%;
-}
-
-.swipe:last-of-type {
-
-}
-
-.card h3 {
-  position: absolute;
-  bottom: 0;
-  margin: 10px;
-  color: #fff;
-}
-
-.infoText {
-  width: 100%;
-  height: 28px;
-  justify-content: center;
-  display: flex;
-  color: #fff;
-  animation-name: popup;
-  animation-duration: 800ms;
-}
-
-.buttons {
-  margin: 20px;
-  display: flex;
-}
-
-.buttons button {
-  flex-shrink: 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  background-color: #9198e5;
-  transition: 200ms;
-  margin: 0 10px;
-  font-weight: bolder;
-  width: 160px;
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
-}
-
-.buttons button:hover {
-  transform: scale(1.05);
-}
-
-@keyframes popup {
-  0%   { transform: scale(1,1) }
-  10%  { transform: scale(1.1,1.1) }
-  30%  { transform: scale(.9,.9) }
-  50%  { transform: scale(1,1) }
-  57%  { transform: scale(1,1) }
-  64%  { transform: scale(1,1) }
-  100% { transform: scale(1,1) }
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
 }

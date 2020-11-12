@@ -67,7 +67,7 @@ renderDefaultView = () => {
       </nav>
         <div className="cards">
           <div className="card">
-            <img src="https://via.placeholder.com/200" alt="Profile Picture" />
+            <img src="https://via.placeholder.com/200" alt="Profile " />
           </div>
         </div>
         <div>

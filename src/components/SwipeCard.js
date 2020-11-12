@@ -10,7 +10,7 @@ import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
-import icon from './img/Fetchmate-draft.png'
+// import icon from './img/Fetchmate-draft.png'
 
 import '../App.css'
 
@@ -45,8 +45,8 @@ let charactersState = db // This fixes issues with updating characters state for
 function SwipeCard () {
   const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
-  const [users, setUsers] = useState([])
-  const [saveUser, setSaveUser] = useState()
+  // const [users, setUsers] = useState([])
+  // const [saveUser, setSaveUser] = useState()
 
   //we need to save the current logged in User location before fetching all users in the same radius ( fetchUsers() )
 

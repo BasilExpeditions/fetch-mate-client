@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { auth } from "../firebase/firebase";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import ProfilePic from './img/profilepicco.jpg'
 
@@ -99,4 +99,4 @@ renderDefaultView = () => {
 }
 
 
-export default ProfileView
+export default withRouter(ProfileView);

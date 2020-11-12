@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { UserContext } from "../providers/UserProvider";
 
-import Home from "./Home";
 import SignIn from "./users/SignIn";
 import SignUp from "./users/SignUp";
 import SwipeCard from "./SwipeCard";
@@ -14,7 +13,6 @@ const Navigation = () => {
   const user = useContext(UserContext);
   return user ? (
     <Switch>
-
       <Route exact path="/" component={SwipeCard} />
       <Route path="/chat" component={Chat} />
       <Route path="/profile" component={ProfileView} />

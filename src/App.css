@@ -175,6 +175,10 @@ p {
 .swipe:last-of-type {
 }
 
+strong {
+  padding-bottom: 0.5em;
+}
+
 .card h3 {
   position: absolute;
   bottom: 0;

@@ -50,12 +50,15 @@ const ChatRoom = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  render() {
   return (
     <div>
       <nav>
-        <button><Link to="/profileView">Fetch Profile</Link></button>
-        <button><Link to="/swipe">Fetch Swipe</Link></button>
+        <button>
+          <Link to="/profileView">Fetch Profile</Link>
+        </button>
+        <button>
+          <Link to="/swipe">Fetch Swipe</Link>
+        </button>
       </nav>
 
       <div className="container-message">
@@ -77,24 +80,24 @@ const ChatRoom = () => {
       </div>
     </div>
   );
-};
 
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
-  return (
-    <div>
-      <div className={`message ${messageClass}`}>
-        <img
-          src={
-            photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
-          }
-          alt=""
-        />
-        <p>{text}</p>
+  function ChatMessage(props) {
+    const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
+    const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
+    return (
+      <div>
+        <div className={`message ${messageClass}`}>
+          <img
+            src={
+              photoURL ||
+              "https://api.adorable.io/avatars/23/abott@adorable.png"
+            }
+            alt=""
+          />
+          <p>{text}</p>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
+};
 export default ChatRoom;

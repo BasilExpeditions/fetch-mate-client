@@ -1,6 +1,6 @@
 # [Fetch Mate](https://test1-57cd1.web.app)
 
-![Fetch Mate gif example](https://photos.app.goo.gl/t45yfL7R9H8B9ne49)
+![Fetch Mate gif example](src/components/img/fetchmate.gif)
 
 ## A Community inspired web-app designed to help users find play-dates for their pets!
 
@@ -14,9 +14,9 @@ Fetch Mate was built using **React** and **Firebase.**
 
 It features -
 
-1. User authentication and federation through both email and Google ![Fetch Mate Sign In](https://photos.app.goo.gl/ymcMHpTortgaGrGc8)
-2. A messaging component ![Fetch Mate Chat](https://photos.app.goo.gl/HHEzZ3Zc5HbNY1Qf7)
-3. A Tinder-like 'swipe card' element allowing users to browse other pets near them ![Fetch Mate Swipe Card](https://photos.app.goo.gl/KgGG5oevuy7dmjd18)
+1. User authentication and federation through both email and Google ![Fetch Mate Sign In](src/components/img/loginexample.png)
+2. A messaging component ![Fetch Mate Chat](src/components/img/chatexample.png)
+3. A Tinder-like 'swipe card' element allowing users to browse other pets near them ![Fetch Mate Swipe Card](src/components/img/swipeexample.png)
 
 ---
 

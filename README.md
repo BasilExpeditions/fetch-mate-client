@@ -12,11 +12,20 @@
 
 Fetch Mate was built using **React** and **Firebase.**
 
-It features -
+**It features -**
 
-1. User authentication and federation through both email and Google ![Fetch Mate Sign In](src/components/img/loginexample.png)
-2. A messaging component ![Fetch Mate Chat](src/components/img/chatexample.png)
-3. A Tinder-like 'swipe card' element allowing users to browse other pets near them ![Fetch Mate Swipe Card](src/components/img/swipeexample.png)
+1. User authentication and federation through both email and Google
+   ![Fetch Mate Sign In](src/components/img/loginexample.png)
+
+---
+
+2. A messaging component
+   ![Fetch Mate Chat](src/components/img/chatexample.png)
+
+---
+
+3. A Tinder-like 'swipe card' element allowing users to browse other pets near them
+   ![Fetch Mate Swipe Card](src/components/img/swipeexample.png)
 
 ---
 

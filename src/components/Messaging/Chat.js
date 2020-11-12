@@ -79,12 +79,7 @@ const ChatRoom = () => {
       return (
         <div>
         <div className={`message ${messageClass}`}>
-<<<<<<< HEAD
         <img className="chat-profile"
-=======
-        <img
-        className="chatImg"
->>>>>>> 1f1b9baa44ab01fe581da5a0878930bd64a27044
         src={
           photoURL ||
           "https://api.adorable.io/avatars/23/abott@adorable.png"

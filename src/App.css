@@ -14,6 +14,7 @@ h1 {
     font-family: 'Lobster', cursive;
     font-size: 150%;
     color: #f02f17;
+    margin-top: -15px;
 }
 
 h2.infoText {
@@ -107,7 +108,7 @@ button:disabled {
 .profileUsername {
   font-family: 'Lobster', cursive;
   font-size: 250%;
-  color: #f02f17;
+  color: black;
 }
 
 ul, li {

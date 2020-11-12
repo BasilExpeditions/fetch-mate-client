@@ -12,6 +12,11 @@ import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
 // import icon from './img/Fetchmate-draft.png'
 
+  //async function on the home page
+  // GetNearbyUsers();
+  // SaveCurrentLocation();
+
+
 import '../App.css'
 
 
@@ -66,8 +71,6 @@ function SwipeCard () {
   //   GetNearbyUsers(result).then(setUsers(...users, result))
   // }
 
-
-
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 
   const swiped = (direction, nameToDelete) => {
@@ -94,36 +97,36 @@ function SwipeCard () {
 
 
 
-  return (
-      <div className="container">
-      <div className="swipe-tab">
-        <nav className="nav">
-          <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
-          <button className="nav-chat"><Link className="navlink" to="/chat">Chat</Link></button>
-        </nav>
-        <h1 className="fetchmate">Fetchmate</h1>
-        </div>
-        <div className="container-swipecard">
-          <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-          <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-          <div className='cardContainer'>
-            {characters.map((character, index) =>
-              <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-                <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-                  <h3>{character.name}</h3>
-                </div>
-              </TinderCard>
-            )}
+    return (
+        <div className="container">
+        <div className="swipe-tab">
+          <nav className="nav">
+            <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
+            <button className="nav-chat"><Link className="navlink" to="/chat">Chat</Link></button>
+          </nav>
+          <h1 className="fetchmate">Fetchmate</h1>
           </div>
-        <div className='buttons'>
-          <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
-          <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+          <div className="container-swipecard">
+            <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+            <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+            <div className='cardContainer'>
+              {characters.map((character, index) =>
+                <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                  <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+                    <h3>{character.name}</h3>
+                  </div>
+                </TinderCard>
+              )}
+            </div>
+          <div className='buttons'>
+            <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+            <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+          </div>
         </div>
-      </div>
-  </div>
-  )
-}
+    </div>
+    )
+  }
 
-    // {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
+    {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
 
 export default withRouter(SwipeCard);

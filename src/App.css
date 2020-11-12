@@ -336,5 +336,24 @@ img {
 }
 
 .chat-input {
-  width: 900px;
+  width: 850px;
+  margin-right: 20px;
+  padding: 15px;
+  border-radius: 50px;
+  outline: none;
+}
+
+button.chat-submit-button {
+  background: #f2825b; /* Old browsers */
+  background: -moz-linear-gradient(left, #f2825b 0%, #e55b2b 50%, #f07146 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #743ad5, #d53a9d;); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #743ad5, #d53a9d); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: white;
+  border: 10px solid;
+  border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  width: 170px;
+  border-radius: 50px;
 }

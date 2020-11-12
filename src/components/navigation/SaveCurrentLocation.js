@@ -18,7 +18,7 @@ import { UserContext } from "../../providers/UserProvider";
     console.log(`Longitude: ${crd.longitude}`);
     geoCollection.doc(user).set(
       {
-        coordinates: new //Isn't creating an Information collection to store GeoPoint. It over rights email address and name
+        coordinates: new 
         firebase.firestore.GeoPoint(crd.latitude, crd.longitude),
       },
       { merge: true }

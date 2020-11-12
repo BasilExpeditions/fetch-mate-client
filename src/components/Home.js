@@ -3,7 +3,6 @@ import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
 import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import GetNearbyUsers from "./navigation/GetNearbyUsers";
-import SwipeCard from "./SwipeCard";
 
 const Home = () => {
 
@@ -18,7 +17,7 @@ const Home = () => {
       <div className="container">
         <div className="child">
           <h4>
-            Welcome {user.displayName}
+            Welcome {user.displayName} to Fetch Mate
             <button
               onClick={() => {
                 auth.signOut();
@@ -27,7 +26,6 @@ const Home = () => {
               Sign out
             </button>
           </h4>
-          <SwipeCard />
         </div>
       </div>
     </div>

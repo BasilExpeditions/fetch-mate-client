@@ -1,4 +1,5 @@
-import React, { useState, useMemo, Component } from 'react'
+import React, { useState, useMemo} from 'react'
+import { Link } from "react-router-dom";
 
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
@@ -87,25 +88,32 @@ function SwipeCard () {
 
 
   return (
-    <div className="container-swipecard">
-      <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-      <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>Fetchmate</h1>
-      <div className='cardContainer'>
-        {characters.map((character, index) =>
-          <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-            <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-              <h3>{character.name}</h3>
-            </div>
-          </TinderCard>
-        )}
+      <div>
+        <nav>
+          <button><Link to="/profileView">Fetch Profile</Link></button>
+          <button><Link to="/chat">Fetch Chat</Link></button>
+        </nav>
+
+        <div className="container-swipecard">
+          <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+          <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+          <h1>Fetchmate</h1>
+          <div className='cardContainer'>
+            {characters.map((character, index) =>
+              <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+                  <h3>{character.name}</h3>
+                </div>
+              </TinderCard>
+            )}
+          </div>
+        <div className='buttons'>
+          <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+          <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+        </div>
+        {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
       </div>
-      <div className='buttons'>
-        <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
-        <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
-      </div>
-      {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
-    </div>
+  </div>
   )
 }
 

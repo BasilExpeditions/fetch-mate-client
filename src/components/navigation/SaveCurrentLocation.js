@@ -20,7 +20,7 @@ const SaveCurrentLocation = (event) => {
 
       //Isn't creating an Information collection to store GeoPoint. It over rights email address and name
       firebase.firestore.GeoPoint(crd.latitude, crd.longitude),
-    });
+    }, {merge: true});
   }
 
   function error(err) {

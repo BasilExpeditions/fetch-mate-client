@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class ProfileView extends Component{
 
   state = {
-    name: "Karen",
+    name: "Sophie",
     description: 'Little Sammy the staffy is looking for play-dates on mondays between 11am - 3pm',
     isInEditMode: false
   }
@@ -74,7 +74,7 @@ renderDefaultView = () => {
         </div>
         <div>
           <form>
-            <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.name}</h3>
+            <h3 className="profileUsername" onDoubleClick={this.changeEditMode}>{this.state.name}</h3>
             <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.description}</h3>
             <strong>Double click text to edit</strong>
           </form>

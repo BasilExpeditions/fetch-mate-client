@@ -91,6 +91,7 @@ button:disabled {
   max-width: 400px;
   margin: 0 auto;
 }
+
 .biggerProfilePic {
   max-width: 350px;
   max-height: 350px;
@@ -102,6 +103,12 @@ button:disabled {
 
 .profilePic {
   margin-top: 5em;
+}
+
+.profileUsername {
+  font-family: 'Lobster', cursive;
+  font-size: 250%;
+  color: #f02f17;
 }
 
 ul, li {

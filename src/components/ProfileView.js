@@ -4,9 +4,6 @@ import { Route, Link } from "react-router-dom";
 import SignIn from "./users/SignIn";
 
 
-const src = 'https://react.semantic-ui.com/images/wireframe/white-image.png'
-
-
 class ProfileView extends Component{
 
   state = {
@@ -70,7 +67,7 @@ renderDefaultView = () => {
       </nav>
         <div className="cards">
           <div className="card">
-            <img src="https://via.placeholder.com/200" />
+            <img src="https://via.placeholder.com/200" alt="Profile " />
           </div>
         </div>
         <div>

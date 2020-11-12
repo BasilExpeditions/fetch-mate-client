@@ -20,7 +20,6 @@ import React, { useState, useRef } from "react";
 import firebase from "firebase/app";
 import { auth, firestore } from "../../firebase/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { Link } from "react-router-dom";
 
 import "../../App.css";
 
@@ -51,33 +50,22 @@ const ChatRoom = () => {
   };
 
   return (
-    <div>
-      <nav>
-        <button>
-          <Link to="/profileView">Fetch Profile</Link>
+    <div className="container-message">
+      <main>
+        {messages &&
+          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        <span ref={dummy}></span>
+      </main>
+      <form onSubmit={sendMessage}>
+        <input
+          value={formValue}
+          onChange={(e) => setFormValue(e.target.value)}
+          placeholder="Say something..."
+        />
+        <button type="submit" disabled={!formValue}>
+          Send
         </button>
-        <button>
-          <Link to="/swipe">Fetch Swipe</Link>
-        </button>
-      </nav>
-
-      <div className="container-message">
-        <main>
-          {messages &&
-            messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
-          <span ref={dummy}></span>
-        </main>
-        <form onSubmit={sendMessage}>
-          <input
-            value={formValue}
-            onChange={(e) => setFormValue(e.target.value)}
-            placeholder="Say something you won't regret"
-          />
-          <button type="submit" disabled={!formValue}>
-            Send
-          </button>
-        </form>
-      </div>
+      </form>
     </div>
   );
 

@@ -64,9 +64,12 @@ renderDefaultView = () => {
         </button>
         <button><Link to="/chat">Fetch Chat</Link></button>
       </nav>
-        <div className="cards">
-          <div className="card">
-            <img className="" src="https://via.placeholder.com/200" alt="Profile " />
+        <div className="profilePic">
+          <div>
+            <img
+            className="biggerProfilePic"
+            src="https://thumbor.thedailymeal.com/CLHte0Y674JJlwYAkOJ5UnANeq4=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/slideshows/104728/106715/00.jpg"
+            alt="Profile " />
           </div>
         </div>
         <div>
@@ -77,9 +80,8 @@ renderDefaultView = () => {
           </form>
           <div className='profileButtons'>
             <button>Play Date</button>
-            <button>Overnight Stay</button>
-            <button>Weekend Sleep Over</button>
-            <button>Daytime Walks</button>
+            <button>Sleep Over</button>
+            <button>Evening Walks</button>
             </div>
         </div>
       </div>

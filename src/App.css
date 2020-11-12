@@ -91,9 +91,17 @@ button:disabled {
   max-width: 400px;
   margin: 0 auto;
 }
+.biggerProfilePic {
+  max-width: 350px;
+  max-height: 350px;
+}
 
 .editProfile {
   text-align: center;
+}
+
+.profilePic {
+  margin-top: 5em;
 }
 
 ul, li {

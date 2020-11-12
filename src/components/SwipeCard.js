@@ -19,20 +19,23 @@ const db = [
   {
     name: 'Penelope Jr',
     url: kitty1
-
   },
+
   {
     name: 'Cooper',
     url: kitty2
   },
+
   {
     name: 'Rufus',
     url: doggo1
   },
+
   {
     name: 'Ginger',
     url: doggo2
   },
+  
   {
     name: 'Bob',
     url: doggo3

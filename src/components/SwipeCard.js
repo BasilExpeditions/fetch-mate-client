@@ -9,6 +9,7 @@ import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
+import icon from './img/Fetchmate-draft.png'
 
 import '../App.css'
 

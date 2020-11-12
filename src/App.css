@@ -216,9 +216,10 @@ img {
   width: 80vw;
   max-width: 260px;
   height: 300px;
-  border: 2px solid red;
+  border: 1px solid red;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
 }
 
 .cardContent {

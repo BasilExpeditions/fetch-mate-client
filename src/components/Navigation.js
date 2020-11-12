@@ -10,13 +10,11 @@ import Chat from "./Messaging/Chat";
 import ProfileView from "./ProfileView";
 import Connect from "./Connect";
 
-
-
 const Navigation = () => {
   const user = useContext(UserContext);
   return user ? (
     <Switch>
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/swipe" component={SwipeCard} />
       <Route path="/chat" component={Chat} />
       <Route path="/profileView" component={ProfileView} />
@@ -24,8 +22,8 @@ const Navigation = () => {
     </Switch>
   ) : (
     <Switch>
-        <Route exact path="/" component={SignIn} />
-        <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/" component={SignIn} />
+      <Route exact path="/signup" component={SignUp} />
     </Switch>
   );
 };

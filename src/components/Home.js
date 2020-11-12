@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
 // import SaveCurrentLocation from "./navigation/SaveCurrentLocation";

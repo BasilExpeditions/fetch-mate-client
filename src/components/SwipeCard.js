@@ -1,6 +1,8 @@
 import React, { useState, useMemo} from 'react'
 import { withRouter, Link } from "react-router-dom";
 import TinderCard from 'react-tinder-card'
+// import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
+// import GetNearbyUsers from "./navigation/GetNearbyUsers";
 
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
@@ -123,7 +125,6 @@ function SwipeCard () {
             <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
             <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
           </div>
-        </div>
       </div>
       {console.log(lastDirection)}
   </div>

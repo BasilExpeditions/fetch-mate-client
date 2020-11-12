@@ -75,7 +75,6 @@ button {
 }
 
 button:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -98,6 +97,7 @@ main {
 }
 
 p {
+  font-family: sans-serif;
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
@@ -297,9 +297,12 @@ input.signin-input {
 
 main.chatroom {
   padding: 10px;
-  height: 80vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 84vh;
   flex-direction: column;
   background-color: white;
+  box-shadow: 0px 0px 20px lightgrey;
 }
 
 .message {
@@ -312,9 +315,8 @@ main.chatroom {
 }
 
 .sent p {
+  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
   color: white;
-  background: #0b93f6;
-  /* align-self: flex-end; */
   text-align: right;
 }
 
@@ -324,36 +326,54 @@ main.chatroom {
   text-align: left;
 }
 
-img {
-  width: 40px;
-  height: 40px;
+img.chat-profile {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin: 2px 5px;
+  margin: 8px 8px;
 }
 
 .chat-form {
   display: flex;
+  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 0px 20px lightgrey;
 }
 
 .chat-input {
   width: 850px;
   margin-right: 20px;
   padding: 15px;
-  border-radius: 50px;
   outline: none;
+  border: none;
+  font-size: larger;
 }
 
 button.chat-submit-button {
-  background: #f2825b; /* Old browsers */
-  background: -moz-linear-gradient(left, #f2825b 0%, #e55b2b 50%, #f07146 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #743ad5, #d53a9d;); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #743ad5, #d53a9d); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  color: white;
-  border: 10px solid;
-  border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;
+  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  outline: none;
   text-decoration: none;
   cursor: pointer;
   font-size: 1.25rem;
   width: 170px;
   border-radius: 50px;
+  border: 1.1px;
+}
+
+h2.chat-tab-username {
+  margin-bottom: 0;
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: xx-large;
+  color: white;
+  font-weight: 500;
+}
+
+.chat-tab {
+  max-width: 960px;
+  margin: 0 auto;
+  background: red;
+  box-shadow: 0px 0px 20px lightgrey;
 }

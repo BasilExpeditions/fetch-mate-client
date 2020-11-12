@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { auth } from "../firebase/firebase";
+import { Route, Link } from "react-router-dom";
+import SignIn from "./users/SignIn";
 
 
 const src = 'https://react.semantic-ui.com/images/wireframe/white-image.png'
@@ -54,16 +57,18 @@ renderEditView = () => {
 renderDefaultView = () => {
   return(
     <div>
+      <nav>
+        <button><Link to="/swipe">Fetch Swipe</Link></button>
+        <button
+          onClick={() => {
+            auth.signOut()
+          }}
+        ><Route exact path="/" component={SignIn}></Route>
+          Sign out
+        </button>
+        <button><Link to="/chat">Fetch Chat</Link></button>
+      </nav>
         <div className="cards">
-          <div className="card">
-            <img src="https://via.placeholder.com/200" />
-          </div>
-          <div className="card">
-            <img src="https://via.placeholder.com/200" />
-          </div>
-          <div className="card">
-            <img src="https://via.placeholder.com/200" />
-          </div>
           <div className="card">
             <img src="https://via.placeholder.com/200" />
           </div>

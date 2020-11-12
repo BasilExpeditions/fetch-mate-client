@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-  background: white;
+  background: linear-gradient(to right, #5c258d, #4389a2);
+  margin: 0 auto;
 }
 
 h1 {
@@ -328,10 +329,10 @@ main.chatroom {
   padding: 10px;
   padding-left: 40px;
   padding-right: 40px;
-  height: 84vh;
+  height: 73vh;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0px 0px 20px lightgrey;
+  box-shadow: 0px 0px 20px #795548;;
 }
 
 .message {
@@ -344,7 +345,7 @@ main.chatroom {
 }
 
 .sent p {
-  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  background: linear-gradient(to left, #743ad5, #d53a9d);
   color: white;
   text-align: right;
 }
@@ -367,7 +368,7 @@ img.chat-profile {
   padding: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0px 0px 20px lightgrey;
+  box-shadow: 0px 0px 20px #795548;;
 }
 
 .chat-input {
@@ -380,7 +381,7 @@ img.chat-profile {
 }
 
 button.chat-submit-button {
-  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  background: linear-gradient(to right, #f2709c 0%,#f2709c 45%,#ff9472 100%);
   outline: none;
   text-decoration: none;
   cursor: pointer;
@@ -392,17 +393,43 @@ button.chat-submit-button {
 
 h2.chat-tab-username {
   margin-bottom: 0;
+  margin-top: 0;
   text-align: center;
   padding: 20px;
   font-family: sans-serif;
-  font-size: xx-large;
+  font-size: 250%;
   color: white;
   font-weight: 500;
 }
 
 .chat-tab {
   max-width: 960px;
+  height: 15vh;
   margin: 0 auto;
-  background: red;
-  box-shadow: 0px 0px 20px lightgrey;
+  background: linear-gradient(to right, #f2709c 0%,#f2709c 45%,#ff9472 100%);
+  box-shadow: 0px 0px 30px #795548;;
+}
+
+.chat-nav-swipe {
+  margin-left: 712px;
+}
+
+.chat-nav-profile, .chat-nav-swipe {
+  background: white;
+  border: none;
+  padding: 20px;
+  border-radius: 50px;
+  outline: none;
+}
+
+a.navlink {
+  color: red;
+}
+
+.chat-nav {
+  margin: 0 auto;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 30px;
+  padding-bottom: 0;
 }

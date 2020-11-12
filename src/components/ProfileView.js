@@ -55,7 +55,7 @@ renderDefaultView = () => {
   return(
     <div className="App">
       <nav>
-        <button><Link to="/swipe">Fetch Swipe</Link></button>
+        <button><Link to="/">Fetch Swipe</Link></button>
         <button
           onClick={() => {
             auth.signOut()

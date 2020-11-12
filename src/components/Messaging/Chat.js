@@ -47,7 +47,7 @@ const ChatRoom = () => {
     <div className="chat-tab">
     <nav className="nav">
     <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
-    <button className="nav-swipe"><Link className="navlink" to="/swipe">Swipe</Link></button>
+    <button className="nav-swipe"><Link className="navlink" to="/">Swipe</Link></button>
     </nav>
     <h2 className="chat-tab-username">Bastien</h2>
     </div>

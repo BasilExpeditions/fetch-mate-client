@@ -1,5 +1,5 @@
 import React, { useState, useMemo} from 'react'
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
@@ -126,4 +126,4 @@ function SwipeCard () {
 
     // {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
 
-export default SwipeCard
+export default withRouter(SwipeCard);

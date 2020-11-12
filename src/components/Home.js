@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 // import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 // import GetNearbyUsers from "./navigation/GetNearbyUsers";
 

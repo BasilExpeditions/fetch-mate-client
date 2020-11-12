@@ -14,8 +14,8 @@ const Navigation = () => {
   const user = useContext(UserContext);
   return user ? (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/swipe" component={SwipeCard} />
+
+      <Route exact path="/" component={SwipeCard} />
       <Route path="/chat" component={Chat} />
       <Route path="/profile" component={ProfileView} />
       <Route path="/connect" component={Connect} />
@@ -23,7 +23,7 @@ const Navigation = () => {
   ) : (
     <Switch>
       <Route exact path="/" component={SignIn} />
-      <Route exact path="/signup" component={SignUp} />
+      <Route path="/signup" component={SignUp} />
     </Switch>
   );
 };

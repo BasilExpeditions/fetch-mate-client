@@ -28,26 +28,28 @@ updateComponentValue = () => {
 
 renderEditView = () => {
   return (
-  <div className='editProfile'>
-    <h1 className="profileNameUser">Username:</h1>
-    <input
-      className="editInput"
-      type="text"
-      defaultValue={this.state.name}
-      ref="theNameInput"
-    />
-    <h1 className="profileNameUser">Description:</h1>
-    <input
-      className="editInput"
-      type="text"
-      defaultValue={this.state.description}
-      ref="theDescriptionInput"
-    />
-    <div>
-    <button onClick={this.changeEditMode}>Cancel</button>
-    <button onClick={this.updateComponentValue}>OK</button>
+    <div className="inputDiv">
+      <div className='editProfile'>
+        <h1 className="profileNameUser">Username:</h1>
+          <input
+            className="editInput"
+            type="text"
+            defaultValue={this.state.name}
+            ref="theNameInput"
+          />
+          <h1 className="profileNameUser">Description:</h1>
+          <input
+            className="editInput"
+            type="text"
+            defaultValue={this.state.description}
+            ref="theDescriptionInput"
+          />
+        <div>
+          <button onClick={this.changeEditMode}>Cancel</button>
+          <button onClick={this.updateComponentValue}>OK</button>
+        </div>
+      </div>
     </div>
-  </div>
   )
 }
 

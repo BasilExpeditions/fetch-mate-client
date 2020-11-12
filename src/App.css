@@ -10,6 +10,12 @@ h1 {
   color: #f02f17;
 }
 
+.profileNameUser{
+    font-family: 'Lobster', cursive;
+    font-size: 150%;
+    color: #f02f17;
+}
+
 h2.infoText {
   color: #f02f17;
 }
@@ -85,6 +91,25 @@ button:disabled {
   margin: 0 auto;
 }
 
+.biggerProfilePic {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.editProfile {
+  text-align: center;
+}
+
+.profilePic {
+  margin-top: 5em;
+}
+
+.profileUsername {
+  font-family: 'Lobster', cursive;
+  font-size: 250%;
+  color: #f02f17;
+}
+
 ul, li {
   text-align: left;
   list-style: none;
@@ -132,10 +157,14 @@ p {
   width: 80vw;
   max-width: 260px;
   height: 300px;
-  border: 1px solid red;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+  display: flex
+}
+
+.profileButtons {
+  display: inline
 }
 
 .cardContent {

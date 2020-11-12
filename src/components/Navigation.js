@@ -17,7 +17,7 @@ const Navigation = () => {
       <Route exact path="/" component={Home} />
       <Route path="/swipe" component={SwipeCard} />
       <Route path="/chat" component={Chat} />
-      <Route path="/profileView" component={ProfileView} />
+      <Route path="/profile" component={ProfileView} />
       <Route path="/connect" component={Connect} />
     </Switch>
   ) : (

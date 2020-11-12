@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class ProfileView extends Component{
 
   state = {
-    name: "Karen",
+    name: "Sophie",
     description: 'Little Sammy the staffy is looking for play-dates on mondays between 11am - 3pm',
     isInEditMode: false
   }
@@ -27,15 +27,15 @@ updateComponentValue = () => {
 
 renderEditView = () => {
   return (
-  <div>
-    <p>Username:</p>
+  <div className='editProfile'>
+    <h1 className="profileNameUser">Username:</h1>
     <input
       className="editInput"
       type="text"
       defaultValue={this.state.name}
       ref="theNameInput"
     />
-    <p>Description:</p>
+    <h1 className="profileNameUser">Description:</h1>
     <input
       className="editInput"
       type="text"
@@ -52,7 +52,7 @@ renderEditView = () => {
 
 renderDefaultView = () => {
   return(
-    <div>
+    <div className="App">
       <nav>
         <button><Link to="/swipe">Fetch Swipe</Link></button>
         <button
@@ -64,21 +64,24 @@ renderDefaultView = () => {
         </button>
         <button><Link to="/chat">Fetch Chat</Link></button>
       </nav>
-        <div className="cards">
-          <div className="card">
-            <img src="https://via.placeholder.com/200" alt="Profile " />
+        <div className="profilePic">
+          <div>
+            <img
+            className="biggerProfilePic"
+            src="https://thumbor.thedailymeal.com/CLHte0Y674JJlwYAkOJ5UnANeq4=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/slideshows/104728/106715/00.jpg"
+            alt="Profile " />
           </div>
         </div>
         <div>
           <form>
-            <h4 onDoubleClick={this.changeEditMode}>{this.state.name}</h4>
-            <p onDoubleClick={this.changeEditMode}>{this.state.description}</p>
+            <h3 className="profileUsername" onDoubleClick={this.changeEditMode}>{this.state.name}</h3>
+            <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.description}</h3>
+            <strong>Double click text to edit</strong>
           </form>
-          <div className='buttons'>
+          <div className='profileButtons'>
             <button>Play Date</button>
-            <button>Overnight Stay</button>
-            <button>Weekend Sleep Over</button>
-            <button>Daytime Walks</button>
+            <button>Sleep Over</button>
+            <button>Evening Walks</button>
             </div>
         </div>
       </div>

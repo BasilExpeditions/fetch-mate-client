@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-  background: white;
+  background: linear-gradient(to right, #5c258d, #4389a2);
+  margin: 0 auto;
+}
+
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -24,37 +31,6 @@ h2.infoText {
 a {
   text-decoration: none;
   color: whitesmoke;
-}
-
-.App {
-  text-align: center;
-  max-width: 728px;
-  margin: 0 auto;
-}
-
-.App header {
-  background-color: #181717;
-  height: 10vh;
-  min-height: 50px;
-  color: white;
-  position: fixed;
-  width: 100%;
-  max-width: 728px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 99;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.App section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: rgb(40, 37, 53);
 }
 
 main::-webkit-scrollbar {
@@ -134,54 +110,17 @@ p {
   text-align: center;
 }
 
-.row {
-  flex-direction: row !important;
-}
-
-.row>* {
-  margin: 5px;
-}
-
-.swipe {
-  position: absolute;
-  display: flex;
-}
-
-.cardContainer {
-  width: 90vw;
-  max-width: 260px;
-  height: 300px;
-  margin: 30px;
-}
-
-.card {
-  width: 80vw;
-  max-width: 260px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  display: flex
-}
-
 .profileButtons {
-  display: inline
-}
-
-.cardContent {
-  width: 100%;
-  height: 100%;
+  border-radius: 15px;
 }
 
 .swipe:last-of-type {
 }
 
-.card h3 {
-  position: absolute;
-  bottom: 0;
-  margin: 10px;
-  color: #fff;
+strong {
+  padding-bottom: 0.5em;
 }
+
 
 .infoText {
   width: 100%;
@@ -226,10 +165,37 @@ p {
 
 /* =============== SwipeCard =============== */
 
-.container-swipecard, .container-signin, h1 {
+.container-swipecard, .container-signin {
   justify-items: center;
   justify-content: center;
   display: grid;
+  max-width: 960px;
+  background-color: white;
+  align-items: center;
+}
+
+.fetchmate {
+  margin-top: 0;
+  justify-items: center;
+  justify-content: center;
+  display: grid;
+  max-width: 960px;
+  color: white;
+}
+
+.container-swipecard {
+  box-shadow: 0px 0px 20px #795548;
+  height: 83.5vh;
+}
+
+.swipe-tab {
+  max-width: 960px;
+  height: 15vh;
+  margin: 0 auto;
+  background: linear-gradient(to right, #f2709c 0%,#f2709c 45%,#ff9472 100%);
+  box-shadow: 0px 0px 30px #795548;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 .left-button, .right-button {
@@ -241,12 +207,55 @@ p {
   background: red;
   border: 3px solid red;
   border-radius: 20px;
+  outline: none;
 }
 
 .right-button {
   background: green;
   border: 3px solid green;
   border-radius: 20px;
+  outline: none;
+}
+
+.card h3 {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  flex-direction: row !important;
+}
+
+.row>* {
+  margin: 5px;
+}
+
+.swipe {
+  position: absolute;
+  display: flex;
+}
+
+.cardContainer {
+  width: 480px;
+  height: 550px;
+}
+
+.card {
+  width: 480px;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  display: grid;
+  box-shadow: 0px 0px 10px #795548;
 }
 
 /* =============== Signin =============== */
@@ -329,10 +338,10 @@ main.chatroom {
   padding: 10px;
   padding-left: 40px;
   padding-right: 40px;
-  height: 84vh;
+  height: 73vh;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0px 0px 20px lightgrey;
+  box-shadow: 0px 0px 20px #795548;
 }
 
 .message {
@@ -345,7 +354,7 @@ main.chatroom {
 }
 
 .sent p {
-  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  background: linear-gradient(to left, #743ad5, #d53a9d);
   color: white;
   text-align: right;
 }
@@ -368,7 +377,7 @@ img.chat-profile {
   padding: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0px 0px 20px lightgrey;
+  box-shadow: 0px 0px 20px #795548;;
 }
 
 .chat-input {
@@ -381,7 +390,7 @@ img.chat-profile {
 }
 
 button.chat-submit-button {
-  background: linear-gradient(to right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  background: linear-gradient(to right, #f2709c 0%,#f2709c 45%,#ff9472 100%);
   outline: none;
   text-decoration: none;
   cursor: pointer;
@@ -393,17 +402,80 @@ button.chat-submit-button {
 
 h2.chat-tab-username {
   margin-bottom: 0;
+  margin-top: 0;
   text-align: center;
   padding: 20px;
   font-family: sans-serif;
-  font-size: xx-large;
+  font-size: 250%;
   color: white;
   font-weight: 500;
 }
 
 .chat-tab {
   max-width: 960px;
+  height: 15vh;
   margin: 0 auto;
-  background: red;
-  box-shadow: 0px 0px 20px lightgrey;
+  background: linear-gradient(to right, #f2709c 0%,#f2709c 45%,#ff9472 100%);
+  box-shadow: 0px 0px 30px #795548;;
+}
+
+.nav-swipe, .nav-chat {
+  margin-left: 712px;
+}
+
+.nav-profile, .nav-swipe, .nav-chat {
+  background: white;
+  border: none;
+  padding: 20px;
+  border-radius: 50px;
+  outline: none;
+}
+
+a.navlink {
+  color: red;
+}
+
+.nav {
+  margin: 0 auto;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+/* =============== Profile =============== */
+
+.App {
+  text-align: center;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  height: 100vh;
+  box-shadow: 0px 0px 20px #795548;
+}
+
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  min-height: 50px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(40, 37, 53);
 }

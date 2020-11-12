@@ -43,13 +43,13 @@ const ChatRoom = () => {
   };
 
   return (
-    <div>
+    <div className="container">
     <div className="chat-tab">
-    <nav>
-    <button><Link to="/profile">Fetch Profile</Link></button>
-    <button><Link to="/swipe">Fetch Swipe</Link></button>
+    <nav className="nav">
+    <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
+    <button className="nav-swipe"><Link className="navlink" to="/swipe">Swipe</Link></button>
     </nav>
-    <h2 className="chat-tab-username">User Name</h2>
+    <h2 className="chat-tab-username">Bastien</h2>
     </div>
     <div className="container-message">
     <main className="chatroom">

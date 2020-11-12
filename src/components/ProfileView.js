@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { auth } from "../firebase/firebase";
 import { Link } from "react-router-dom";
 
+import ProfilePic from './img/profilepicco.jpg'
 
 class ProfileView extends Component{
 
   state = {
-    name: "Sophie",
-    description: 'Little Sammy the staffy is looking for play-dates on mondays between 11am - 3pm',
+    name: "Brett",
+    description: 'Little Sammy the Labradore is looking for play-dates on mondays between 11am and 3pm',
     isInEditMode: false
   }
 
@@ -68,7 +69,7 @@ renderDefaultView = () => {
           <div>
             <img
             className="biggerProfilePic"
-            src="https://thumbor.thedailymeal.com/CLHte0Y674JJlwYAkOJ5UnANeq4=/870x565/filters:format(webp)/https://www.theactivetimes.com/sites/default/files/slideshows/104728/106715/00.jpg"
+            src={ProfilePic}
             alt="Profile " />
           </div>
         </div>
@@ -78,10 +79,10 @@ renderDefaultView = () => {
             <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.description}</h3>
             <strong>Double click text to edit</strong>
           </form>
-          <div className='profileButtons'>
-            <button>Play Date</button>
-            <button>Sleep Over</button>
-            <button>Evening Walks</button>
+          <div>
+            <button className='profileButtons'>Play Date</button>
+            <button className='profileButtons'>Sleep Over</button>
+            <button className='profileButtons'>Evening Walks</button>
             </div>
         </div>
       </div>

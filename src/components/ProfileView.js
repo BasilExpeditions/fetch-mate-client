@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { auth } from "../firebase/firebase";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ProfilePic from './img/profilepicco.jpg'
 
@@ -60,8 +60,8 @@ renderDefaultView = () => {
           onClick={() => {
             auth.signOut()
           }}
-        >
-          Sign out
+        ><Link to="/">
+          Sign out</Link>
         </button>
         <button><Link to="/chat">Fetch Chat</Link></button>
       </nav>
@@ -99,4 +99,4 @@ renderDefaultView = () => {
 }
 
 
-export default withRouter(ProfileView);
+export default ProfileView;

@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-  background-color: white;
+  background: white;
 }
 
 h1 {
   font-family: 'Lobster', cursive;
   font-size: 350%;
-  color: coral;
+  color: #f02f17;
 }
 
 h2.infoText {
-  color: coral;
+  color: #f02f17;
 }
 
 a {
   text-decoration: none;
   color: whitesmoke;
 }
+
 .App {
   text-align: center;
   max-width: 728px;
@@ -49,15 +50,6 @@ a {
   background-color: rgb(40, 37, 53);
 }
 
-main {
-  padding: 10px;
-  height: 80vh;
-  margin: 10vh 0 10vh;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-}
-
 main::-webkit-scrollbar {
   width: 0.25rem;
 }
@@ -68,67 +60,6 @@ main::-webkit-scrollbar-track {
 
 main::-webkit-scrollbar-thumb {
   background: #6649b8;
-}
-
-form {
-  height: 100%;
-  background-color: white;
-  color: grey;
-  max-width: 960px;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
-}
-
-button.signin-button {
-  background: #febbbb; /* Old browsers */
-  background: -moz-linear-gradient(left,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 ); /* IE6-9 */
-  border-radius: 50px;
-  outline: none;
-  margin: 0 auto;
-  width: 270px;
-  padding: 1em;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-button.google-login-button {
-  background-color: white;
-  color: red;
-  border: 1px solid red;
-  border-radius: 50px;
-  outline: none;
-  max-width: 960px;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
-  width: 270px;
-  padding: 1em;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.signin-input {
-  line-height: 1.5;
-  width: 100%;
-  font-size: 1.1rem;
-  background: white;
-  color: lightgrey;
-  outline: none;
-  border: 1px solid red;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 50px;
-  text-align: center;
-  width: 250px;
-  padding: 0.5em;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 button {
@@ -155,10 +86,15 @@ button:disabled {
   margin: 0 auto;
 }
 
-ul,
-li {
+ul, li {
   text-align: left;
   list-style: none;
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  flex-direction: column;
 }
 
 p {
@@ -172,42 +108,19 @@ p {
   text-align: center;
 }
 
-.message {
-  display: flex;
-  align-items: center;
-}
-
-.sent {
-  flex-direction: row-reverse;
-}
-
-.sent p {
-  color: white;
-  background: #0b93f6;
-  align-self: flex-end;
-}
-.received p {
-  background: #e5e5ea;
-  color: black;
-}
-
-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 2px 5px;
-}
-
 .row {
   flex-direction: row !important;
 }
+
 .row>* {
   margin: 5px;
 }
+
 .swipe {
   position: absolute;
   display: flex;
 }
+
 .cardContainer {
   width: 90vw;
   max-width: 260px;
@@ -229,14 +142,17 @@ img {
   width: 100%;
   height: 100%;
 }
+
 .swipe:last-of-type {
 }
+
 .card h3 {
   position: absolute;
   bottom: 0;
   margin: 10px;
   color: #fff;
 }
+
 .infoText {
   width: 100%;
   height: 28px;
@@ -246,6 +162,7 @@ img {
   animation-name: popup;
   animation-duration: 800ms;
 }
+
 /* .buttons {
   margin: 20px;
   display: flex;
@@ -277,9 +194,9 @@ img {
   100% { transform: scale(1,1) }
 }
 
-/* =============== SwipeCard=============== */
+/* =============== SwipeCard =============== */
 
-.container-swipecard, .container-signin {
+.container-swipecard, .container-signin, h1 {
   justify-items: center;
   justify-content: center;
   display: grid;
@@ -300,4 +217,124 @@ img {
   background: green;
   border: 3px solid green;
   border-radius: 20px;
+}
+
+/* =============== Signin =============== */
+
+div.container-signin {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  height: 100%;
+  background-color: white;
+  color: grey;
+  max-width: 960px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+button.signin-button {
+  background: -moz-linear-gradient(left,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-radius: 50px;
+  outline: none;
+  margin: 0 auto;
+  width: 270px;
+  padding: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button.google-login-button {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  border-radius: 50px;
+  outline: none;
+  max-width: 960px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  width: 260px;
+  padding: 0.9em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.signin-input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.1rem;
+  background: white;
+  color: lightgrey;
+  outline: none;
+  border: 1px solid red;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 50px;
+  text-align: center;
+  width: 250px;
+  padding: 0.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* =============== Message =============== */
+
+.container-message {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main.chatroom {
+  padding: 10px;
+  height: 80vh;
+  flex-direction: column;
+  background-color: white;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: #0b93f6;
+  /* align-self: flex-end; */
+  text-align: right;
+}
+
+.received p {
+  background: #e5e5ea;
+  color: black;
+  text-align: left;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+.chat-form {
+  display: flex;
+}
+
+.chat-input {
+  width: 900px;
 }

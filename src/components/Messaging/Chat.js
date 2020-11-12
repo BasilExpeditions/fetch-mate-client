@@ -8,6 +8,7 @@ import React, { useState, useRef } from "react";
 import firebase from "firebase/app";
 import { auth, firestore } from "../../firebase/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+// import { UserContext } from "../providers/UserProvider";
 
 import "../../App.css";
 
@@ -37,41 +38,41 @@ const ChatRoom = () => {
 
   return (
     <div className="container-message">
-      <main>
-        {messages &&
-          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
-        <span ref={dummy}></span>
+    <main className="chatroom">
+    {messages &&
+      messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+      <span ref={dummy}></span>
       </main>
-      <form onSubmit={sendMessage}>
-        <input
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="Say something..."
-        />
-        <button type="submit" disabled={!formValue}>
-          Send
-        </button>
+      <form className="chat-form" onSubmit={sendMessage}>
+      <input className="chat-input"
+      value={formValue}
+      onChange={(e) => setFormValue(e.target.value)}
+      placeholder="Say something..."
+      />
+      <button className="submit-button" type="submit" disabled={!formValue}>
+      Send
+      </button>
       </form>
-    </div>
-  );
-};
-
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
-  const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
-  return (
-    <div>
-      <div className={`message ${messageClass}`}>
-        <img
-          src={
-            photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
-          }
-          alt=""
-        />
-        <p>{text}</p>
       </div>
-    </div>
-  );
-}
+    );
+  };
 
-export default ChatRoom;
+  function ChatMessage(props) {
+    const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
+    const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS: message sent, message recieved
+    return (
+      <div>
+      <div className={`message ${messageClass}`}>
+      <img
+      src={
+        photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
+      }
+      alt=""
+      />
+      <p>{text}</p>
+      </div>
+      </div>
+    );
+  }
+
+  export default ChatRoom;

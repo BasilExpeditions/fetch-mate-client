@@ -77,9 +77,6 @@ const ChatRoom = () => {
       return (
         <div>
         <div className={`message ${messageClass}`}>
-        <img className="chat-profile"/>
-        <img
-        className="chatImg"
         <img className="chat-profile"
         src={
           photoURL ||

@@ -16,7 +16,7 @@ const Navigation = () => {
   const user = useContext(UserContext);
   return user ? (
     <Switch>
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/home"><Home /></Route>
       <Route path="/swipe" component={SwipeCard} />
       <Route path="/chat" component={Chat} />
       <Route path="/profileView" component={ProfileView} />

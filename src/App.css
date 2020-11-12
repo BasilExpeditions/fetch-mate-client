@@ -82,9 +82,11 @@ form {
 }
 
 button.signin-button {
-  background-color: red;
-  color: white;
-  border: 1px solid red;
+  background: #febbbb; /* Old browsers */
+  background: -moz-linear-gradient(left,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 ); /* IE6-9 */
   border-radius: 50px;
   outline: none;
   margin: 0 auto;
@@ -212,6 +214,7 @@ img {
   height: 300px;
   margin: 30px;
 }
+
 .card {
   width: 80vw;
   max-width: 260px;

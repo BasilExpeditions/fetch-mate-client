@@ -7,8 +7,8 @@ import GetNearbyUsers from "./navigation/GetNearbyUsers";
 const Home = () => {
 
   //async function on the home page
-  GetNearbyUsers();
-  SaveCurrentLocation();
+  // GetNearbyUsers();
+  // SaveCurrentLocation();
 
 
   const user = useContext(UserContext);

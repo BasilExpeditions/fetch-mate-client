@@ -36,6 +36,7 @@ const ChatRoom = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  render() {
   return (
     <div>
       <nav>

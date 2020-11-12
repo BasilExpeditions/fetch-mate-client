@@ -3,7 +3,7 @@ import * as geofirestore from "geofirestore";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserProvider";
 
-const SaveCurrentLocation = (event) => {
+  const SaveCurrentLocation = (event) => {
   const user = useContext(UserContext).uid;
 
   const firestore = firebase.firestore();

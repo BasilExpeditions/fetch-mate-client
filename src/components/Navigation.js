@@ -9,7 +9,7 @@ import SwipeCard from "./SwipeCard";
 import Chat from "./Messaging/Chat";
 import ProfileView from "./ProfileView";
 import Connect from "./Connect";
-import { auth } from "../firebase/firebase";
+
 
 
 const Navigation = () => {

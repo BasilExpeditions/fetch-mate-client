@@ -164,7 +164,7 @@ p {
 }
 
 .profileButtons {
-  display: inline
+  border-radius: 15px;
 }
 
 .cardContent {

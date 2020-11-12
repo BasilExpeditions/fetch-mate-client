@@ -78,10 +78,10 @@ renderDefaultView = () => {
             <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.description}</h3>
             <strong>Double click text to edit</strong>
           </form>
-          <div className='profileButtons'>
-            <button>Play Date</button>
-            <button>Sleep Over</button>
-            <button>Evening Walks</button>
+          <div>
+            <button className='profileButtons'>Play Date</button>
+            <button className='profileButtons'>Sleep Over</button>
+            <button className='profileButtons'>Evening Walks</button>
             </div>
         </div>
       </div>

@@ -8,6 +8,10 @@ import React, { useState, useRef } from "react";
 import firebase from "firebase/app";
 import { auth, firestore } from "../../firebase/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import ProfileView from "../ProfileView";
+import SwipeCard from "../SwipeCard";
+import { Link } from "react-router-dom";
+
 
 import "../../App.css";
 
@@ -36,6 +40,11 @@ const ChatRoom = () => {
   };
 
   return (
+    <div>
+      <nav>
+        <button><Link to="/profileView">Fetch Profile</Link></button>
+        <button><Link to="/swipe">Fetch Swipe</Link></button>
+      </nav>
     <div className="container-message">
       <main>
         {messages &&
@@ -53,6 +62,7 @@ const ChatRoom = () => {
         </button>
       </form>
     </div>
+  </div>
   );
 };
 

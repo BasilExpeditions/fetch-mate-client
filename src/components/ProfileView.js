@@ -60,7 +60,7 @@ renderDefaultView = () => {
           onClick={() => {
             auth.signOut()
           }}
-        ><Route exact path="/" component={SignIn}></Route>
+        >
           Sign out
         </button>
         <button><Link to="/chat">Fetch Chat</Link></button>

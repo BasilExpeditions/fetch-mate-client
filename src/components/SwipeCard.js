@@ -94,7 +94,7 @@ function SwipeCard () {
   return (
       <div>
         <nav>
-          <button><Link to="/profileView">Fetch Profile</Link></button>
+          <button><Link to="/profile">Fetch Profile</Link></button>
           <button><Link to="/chat">Fetch Chat</Link></button>
         </nav>
 

@@ -47,7 +47,7 @@ const ChatRoom = () => {
   return (
     <div>
     <nav>
-    <button><Link to="/profileView">Fetch Profile</Link></button>
+    <button><Link to="/profile">Fetch Profile</Link></button>
     <button><Link to="/swipe">Fetch Swipe</Link></button>
     </nav>
     <div className="container-message">
@@ -77,6 +77,7 @@ const ChatRoom = () => {
         <div>
         <div className={`message ${messageClass}`}>
         <img
+        className="chatImg"
         src={
           photoURL ||
           "https://api.adorable.io/avatars/23/abott@adorable.png"

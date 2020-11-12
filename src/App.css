@@ -15,6 +15,7 @@ h1 {
     font-family: 'Lobster', cursive;
     font-size: 150%;
     color: #f02f17;
+    margin-top: -15px;
 }
 
 h2.infoText {
@@ -108,7 +109,7 @@ button:disabled {
 .profileUsername {
   font-family: 'Lobster', cursive;
   font-size: 250%;
-  color: #f02f17;
+  color: black;
 }
 
 ul, li {
@@ -165,7 +166,7 @@ p {
 }
 
 .profileButtons {
-  display: inline
+  border-radius: 15px;
 }
 
 .cardContent {
@@ -174,6 +175,10 @@ p {
 }
 
 .swipe:last-of-type {
+}
+
+strong {
+  padding-bottom: 0.5em;
 }
 
 .card h3 {

@@ -1,16 +1,12 @@
 import React, { useState, useMemo} from 'react'
 import { withRouter, Link } from "react-router-dom";
-
-// import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
-// import GetNearbyUsers from './navigation/GetNearbyUsers'
-// import SaveCurrentLocation from './navigation/SaveCurrentLocation'
+
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
-// import icon from './img/Fetchmate-draft.png'
 
   //async function on the home page
   // GetNearbyUsers();
@@ -53,6 +49,8 @@ let charactersState = db // This fixes issues with updating characters state for
 function SwipeCard () {
   const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
+
+///////////////////////////////////////////////////////////
   // const [users, setUsers] = useState([])
   // const [saveUser, setSaveUser] = useState()
 
@@ -71,6 +69,9 @@ function SwipeCard () {
   //   GetNearbyUsers(result).then(setUsers(...users, result))
   // }
 
+/////////////////////////////////////////////////////////////
+
+  // useMemo is a React hook that memorizes the output of a function.
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 
   const swiped = (direction, nameToDelete) => {
@@ -123,10 +124,11 @@ function SwipeCard () {
             <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
           </div>
         </div>
-    </div>
-    )
-  }
+      </div>
+      {console.log(lastDirection)}
+  </div>
+  )
+}
 
-    {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
 
 export default withRouter(SwipeCard);

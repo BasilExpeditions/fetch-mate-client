@@ -165,7 +165,7 @@ strong {
 
 /* =============== SwipeCard =============== */
 
-.container-swipecard, .container-signin {
+.container-swipecard {
   justify-items: center;
   justify-content: center;
   display: grid;
@@ -261,9 +261,17 @@ strong {
 /* =============== Signin =============== */
 
 div.container-signin {
-  width: 400px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.container-signin {
+  justify-items: center;
+  justify-content: center;
+  display: grid;
+  background-color: white;
+  align-items: center;
 }
 
 form {

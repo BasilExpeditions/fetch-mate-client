@@ -73,6 +73,7 @@ renderDefaultView = () => {
           <form>
             <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.name}</h3>
             <h3 className="profileNameUser" onDoubleClick={this.changeEditMode}>{this.state.description}</h3>
+            <strong>Double click text to edit</strong>
           </form>
           <div className='profileButtons'>
             <button>Play Date</button>

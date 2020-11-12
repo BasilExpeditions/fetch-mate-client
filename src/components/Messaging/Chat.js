@@ -4,11 +4,24 @@
 // Display new/old messages on realtime
 // Display notification icon
 
+// TODO:
+// Ned to know who we're talking to
+// bring up a seperate page that has that persons name/photo etc along with the chat box
+
+// Store that persons uid in a variable
+
+// when our message is created, store the sender and recipients uid's in the message body so
+// we can query them later on
+
+// retrieve a list of messages based on 1) where the user is the recipient and then order those by
+// sender id (to get a list of senders)
+
 import React, { useState, useRef } from "react";
 import firebase from "firebase/app";
 import { auth, firestore } from "../../firebase/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-// import { UserContext } from "../providers/UserProvider";
+import { Link } from "react-router-dom";
+
 
 import "../../App.css";
 
@@ -25,11 +38,13 @@ const ChatRoom = () => {
   const sendMessage = async (e) => {
     e.preventDefault(); // when form is submitted, stop from refreshing
     const { uid, photoURL } = auth.currentUser;
+
     // Create new document in firestore
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
+
       photoURL,
     });
     setFormValue("");
@@ -37,6 +52,11 @@ const ChatRoom = () => {
   };
 
   return (
+    <div>
+      <nav>
+        <button><Link to="/profileView">Fetch Profile</Link></button>
+        <button><Link to="/swipe">Fetch Swipe</Link></button>
+      </nav>
     <div className="container-message">
     <main className="chatroom">
     {messages &&
@@ -53,6 +73,7 @@ const ChatRoom = () => {
       Send
       </button>
       </form>
+<<<<<<< HEAD
       </div>
     );
   };
@@ -76,3 +97,29 @@ const ChatRoom = () => {
   }
 
   export default ChatRoom;
+=======
+    </div>
+  </div>
+  );
+
+  function ChatMessage(props) {
+    const { text, uid, photoURL } = props.message; // this will show on the 'messages collection' on Cloud firestore
+    const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
+    return (
+      <div>
+        <div className={`message ${messageClass}`}>
+          <img
+            src={
+              photoURL ||
+              "https://api.adorable.io/avatars/23/abott@adorable.png"
+            }
+            alt=""
+          />
+          <p>{text}</p>
+        </div>
+      </div>
+    );
+  }
+};
+export default ChatRoom;
+>>>>>>> f250d9f17b767c9d35febb2f5749ad3615277341

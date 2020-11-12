@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { auth } from "../firebase/firebase";
-import { Route, Link } from "react-router-dom";
-import SignIn from "./users/SignIn";
+import { Link } from "react-router-dom";
 
 
 class ProfileView extends Component{
@@ -60,14 +59,14 @@ renderDefaultView = () => {
           onClick={() => {
             auth.signOut()
           }}
-        ><Route exact path="/" component={SignIn}></Route>
+        >
           Sign out
         </button>
         <button><Link to="/chat">Fetch Chat</Link></button>
       </nav>
         <div className="cards">
           <div className="card">
-            <img src="https://via.placeholder.com/200" alt="Profile Picture" />
+            <img src="https://via.placeholder.com/200" alt="Profile " />
           </div>
         </div>
         <div>

@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
-import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
-import GetNearbyUsers from "./navigation/GetNearbyUsers";
+import { withRouter } from "react-router-dom";
+// import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
+// import GetNearbyUsers from "./navigation/GetNearbyUsers";
 
 const Home = () => {
 
@@ -31,4 +32,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default withRouter(Home);

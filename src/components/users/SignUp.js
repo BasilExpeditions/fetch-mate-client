@@ -19,17 +19,7 @@ const SignUp = (props) => {
         inputs.email,
         inputs.password
       );
-      //Information(location) and Input(currentUser) clashing and not saving. Also, not sure if SaveCurrentLocation is saving Information in the right collection - Tried to access
-      // firebase.firestore.Information.location.GeoPoint(crd.latitude, crd.longitude)
-      //
-
-      //Navigation needs to be fixed
-      //Styling needs to be fixed
-      //Storing images
-
-      //SignIn => ProfileView( => ChatList & SwipeCard )
-      //ChatList => IndividualMessage(Go Back to CurrentUserProfile)
-      //ChatNewMatches Automatically come up (Ha ha ha)
+    
       generateUserDocument(user, { displayName: inputs.displayName });
       this.props.history.push("/");
       console.log("user created");

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { auth } from "../firebase/firebase";
-import { Route, Link } from "react-router-dom";
-import SignIn from "./users/SignIn";
+import { Link } from "react-router-dom";
 
 
 class ProfileView extends Component{

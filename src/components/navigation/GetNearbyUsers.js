@@ -3,6 +3,7 @@ import * as geofirestore from "geofirestore";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserProvider";
 
+
 const GetNearbyUsers = (event) => {
   const user = useContext(UserContext).uid;
   const userRef = firestore.collection("users").doc(user);
@@ -21,6 +22,9 @@ const GetNearbyUsers = (event) => {
     });
     query.get().then((value) => {
       console.log(value.docs);
+      //reference in SwipeCard(console.log for testing)
+      const nearByUsers = value.docs.map( u => u.id);
+      return nearByUsers;
     });
   });
 };

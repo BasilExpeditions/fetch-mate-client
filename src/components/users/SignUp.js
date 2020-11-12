@@ -5,7 +5,6 @@ import {
   signInWithGoogle,
   generateUserDocument,
 } from "../../firebase/firebase";
-
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -20,6 +19,17 @@ const SignUp = (props) => {
         inputs.email,
         inputs.password
       );
+      //Information(location) and Input(currentUser) clashing and not saving. Also, not sure if SaveCurrentLocation is saving Information in the right collection - Tried to access
+      // firebase.firestore.Information.location.GeoPoint(crd.latitude, crd.longitude)
+      //
+
+      //Navigation needs to be fixed
+      //Styling needs to be fixed
+      //Storing images
+
+      //SignIn => ProfileView( => ChatList & SwipeCard )
+      //ChatList => IndividualMessage(Go Back to CurrentUserProfile)
+      //ChatNewMatches Automatically come up (Ha ha ha)
       generateUserDocument(user, { displayName: inputs.displayName });
       this.props.history.push("/");
       console.log("user created");
@@ -27,12 +37,10 @@ const SignUp = (props) => {
       console.log(error.message);
     }
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -67,5 +75,4 @@ const SignUp = (props) => {
     </div>
   );
 };
-
 export default withRouter(SignUp);

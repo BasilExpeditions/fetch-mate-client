@@ -1,20 +1,25 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo} from 'react'
+import { Link } from "react-router-dom";
 
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
-
+import GetNearbyUsers from './navigation/GetNearbyUsers'
+import SaveCurrentLocation from './navigation/SaveCurrentLocation'
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
+import icon from './img/Fetchmate-draft.png'
 
 import '../App.css'
+
 
 const db = [
   {
     name: 'Penelope Jr',
     url: kitty1
+
   },
   {
     name: 'Cooper',
@@ -38,8 +43,23 @@ const alredyRemoved = []
 let charactersState = db // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
 function SwipeCard () {
-  const [characters, setCharacters] = useState(db)
+  const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
+  const [users, setUsers] = useState([])
+  const [saveUser, setSaveUser] = useState()
+
+  //we need to save the current logged in User location before fetching all users in the same radius ( fetchUsers() )
+
+  //How to get saveUsers to fire before fetchUsers
+  function saveUsers (result) {
+  SaveCurrentLocation(result).then(setSaveUser(...saveUser, result))
+  }
+
+  function fetchUsers (result) {
+    GetNearbyUsers(result).then(setUsers(...users, result))
+  }
+
+
 
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
 
@@ -65,26 +85,35 @@ function SwipeCard () {
     }
   }
 
+
+
   return (
-    <div>
-      <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-      <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>FetchMate</h1>
-      <div className='cardContainer'>
-        {characters.map((character, index) =>
-          <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-            <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-              <h3>{character.name}</h3>
-            </div>
-          </TinderCard>
-        )}
+      <div>
+        <nav>
+          <button><Link to="/profileView">Fetch Profile</Link></button>
+          <button><Link to="/chat">Fetch Chat</Link></button>
+        </nav>
+
+        <div className="container-swipecard">
+          <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+          <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+          <h1>Fetchmate</h1>
+          <div className='cardContainer'>
+            {characters.map((character, index) =>
+              <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+                  <h3>{character.name}</h3>
+                </div>
+              </TinderCard>
+            )}
+          </div>
+        <div className='buttons'>
+          <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+          <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+        </div>
+        {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
       </div>
-      <div className='buttons'>
-        <button onClick={() => swipe('left')}>Swipe left!</button>
-        <button onClick={() => swipe('right')}>Swipe right!</button>
-      </div>
-      {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText'>Swipe a card or press a button to get started!</h2>}
-    </div>
+  </div>
   )
 }
 

@@ -13,12 +13,13 @@ const SaveCurrentLocation = (event) => {
   const success = (pos) => {
     const coords = pos.coords;
 
+    console.log("Your current position is:");
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
     geoCollection.doc(user).set(
       {
-        coordinates: new firebase.firestore.GeoPoint(
-          coords.latitude,
-          coords.longitude
-        ),
+        coordinates: new //Isn't creating an Information collection to store GeoPoint. It over rights email address and name
+        firebase.firestore.GeoPoint(crd.latitude, crd.longitude),
       },
       { merge: true }
     );

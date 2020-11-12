@@ -20,6 +20,7 @@ import React, { useState, useRef } from "react";
 import firebase from "firebase/app";
 import { auth, firestore } from "../../firebase/firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { Link } from "react-router-dom";
 
 import "../../App.css";
 
@@ -28,7 +29,7 @@ const ChatRoom = () => {
   // Reference a firestore collection - display on firestore everytime someone messages
   const messagesRef = firestore.collection("messages");
   // Make query documents in a collection
-  const query = messagesRef.orderBy("createdAt").limit(25);
+  const query = messagesRef.orderBy("createdAt").limit(1000);
   const [messages] = useCollectionData(query, { idField: "id" }); // Used collection data hook
   const [formValue, setFormValue] = useState(""); // stateful value to the formValue component, store as an empty string
 
@@ -49,23 +50,31 @@ const ChatRoom = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  render() {
   return (
     <div>
-      <main>
-        {messages &&
-          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
-        <span ref={dummy}></span>
-      </main>
-      <form onSubmit={sendMessage}>
-        <input
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="Say something you won't regret"
-        />
-        <button type="submit" disabled={!formValue}>
-          Send
-        </button>
-      </form>
+      <nav>
+        <button><Link to="/profileView">Fetch Profile</Link></button>
+        <button><Link to="/swipe">Fetch Swipe</Link></button>
+      </nav>
+
+      <div className="container-message">
+        <main>
+          {messages &&
+            messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+          <span ref={dummy}></span>
+        </main>
+        <form onSubmit={sendMessage}>
+          <input
+            value={formValue}
+            onChange={(e) => setFormValue(e.target.value)}
+            placeholder="Say something you won't regret"
+          />
+          <button type="submit" disabled={!formValue}>
+            Send
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

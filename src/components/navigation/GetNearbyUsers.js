@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../../providers/UserProvider";
 
 
+
   const GetNearbyUsers = (event) => {
   const user = useContext(UserContext).uid;
   const userRef = firestore.collection("users").doc(user);

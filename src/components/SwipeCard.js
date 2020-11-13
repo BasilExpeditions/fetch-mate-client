@@ -1,18 +1,13 @@
-import React, { useState, useMemo} from 'react'
+import React, { useState, useMemo } from 'react'
+import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import { withRouter, Link } from "react-router-dom";
-import TinderCard from 'react-tinder-card'
-// import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
-// import GetNearbyUsers from "./navigation/GetNearbyUsers";
+import TinderCard from 'react-tinder-card';
 
 import kitty1 from './img/kitty1.jpg'
 import kitty2 from './img/kitty2.jpeg'
 import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
-
-//async function on the home page
-// GetNearbyUsers();
-// SaveCurrentLocation();
 
 
 import '../App.css'
@@ -98,7 +93,9 @@ function SwipeCard () {
     }
   }
 
+  SaveCurrentLocation();
 
+<<<<<<< HEAD
 
   return (
     <div className="container">
@@ -117,6 +114,33 @@ function SwipeCard () {
       <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
       <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
       <h3>{character.name}</h3>
+=======
+  return (
+        <div className="container">
+          <div className="swipe-tab">
+            <nav className="nav">
+              <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
+              <button className="nav-chat"><Link className="navlink" to="/chat">Chat</Link></button>
+            </nav>
+            <h1 className="fetchmate">Fetchmate</h1>
+            </div>
+          <div className="container-swipecard">
+            <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+            <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+            <div className='cardContainer'>
+              {characters.map((character, index) =>
+                <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                  <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+                    <h3>{character.name}</h3>
+                  </div>
+                </TinderCard>
+              )}
+            </div>
+          <div className='buttons'>
+            <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+            <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+          </div>
+>>>>>>> 55b05bb194ce2baeff3fb9988d6548d80805bad9
       </div>
       </TinderCard>
     )}

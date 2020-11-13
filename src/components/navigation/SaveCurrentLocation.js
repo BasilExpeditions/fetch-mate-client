@@ -11,7 +11,7 @@ import { UserContext } from "../../providers/UserProvider";
   const geoCollection = GeoFirestore.collection("users");
 
   const success = (pos) => {
-  const coords = pos.coords;
+  const crd = pos.coords;
 
     console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
@@ -20,8 +20,7 @@ import { UserContext } from "../../providers/UserProvider";
       {
         coordinates: new
         firebase.firestore.GeoPoint(crd.latitude, crd.longitude),
-      },
-      { merge: true }
+      }, { merge: true }
     );
   };
 

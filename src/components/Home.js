@@ -2,15 +2,8 @@ import React, { useContext } from "react";
 import { auth } from "../firebase/firebase";
 import { UserContext } from "../providers/UserProvider";
 import { withRouter} from "react-router-dom";
-// import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
-// import GetNearbyUsers from "./navigation/GetNearbyUsers";
 
 const Home = () => {
-
-  //async function on the home page
-  // GetNearbyUsers();
-  // SaveCurrentLocation();
-
 
   const user = useContext(UserContext);
   return (

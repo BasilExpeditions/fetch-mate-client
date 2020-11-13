@@ -4,7 +4,6 @@
 // Display new/old messages on realtime
 // Display notification icon
 // TODO:
-// Ned to know who we're talking to
 // bring up a seperate page that has that persons name/photo etc along with the chat box
 // Store that persons uid in a variable
 // when our message is created, store the sender and recipients uid's in the message body so
@@ -19,7 +18,7 @@ import { Link } from "react-router-dom";
 
 import "../../App.css";
 
-const ChatRoom = () => {
+  const ChatRoom = () => {
   const dummy = useRef();
   // Reference a firestore collection - display on firestore everytime someone messages
   const messagesRef = firestore.collection("messages");
@@ -44,31 +43,31 @@ const ChatRoom = () => {
 
   return (
     <div className="container">
-    <div className="chat-tab">
-    <nav className="nav">
-    <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
-    <button className="nav-swipe"><Link className="navlink" to="/">Swipe</Link></button>
-    </nav>
-    <h2 className="chat-tab-username">Bastien</h2>
-    </div>
+      <div className="chat-tab">
+          <nav className="nav">
+            <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
+            <button className="nav-swipe"><Link className="navlink" to="/">Swipe</Link></button>
+          </nav>
+        <h2 className="chat-tab-username">Bastien</h2>
+      </div>
     <div className="container-message">
-    <main className="chatroom">
-    {messages &&
-      messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
-      <span ref={dummy}></span>
+      <main className="chatroom">
+        {messages &&
+        messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        <span ref={dummy}></span>
       </main>
-      <form className="chat-form" onSubmit={sendMessage}>
-      <input className="chat-input"
-      value={formValue}
-      onChange={(e) => setFormValue(e.target.value)}
-      placeholder="Say something..."
-      />
-      <button className="chat-submit-button" type="submit" disabled={!formValue}>
-      Send
-      </button>
-      </form>
+        <form className="chat-form" onSubmit={sendMessage}>
+          <input className="chat-input"
+          value={formValue}
+          onChange={(e) => setFormValue(e.target.value)}
+          placeholder="Say something..."
+          />
+          <button className="chat-submit-button" type="submit" disabled={!formValue}>
+          Send
+          </button>
+        </form>
       </div>
-      </div>
+    </div>
     );
 
     function ChatMessage(props) {
@@ -76,16 +75,16 @@ const ChatRoom = () => {
       const messageClass = uid === auth.currentUser.uid ? "sent" : "received"; // conditional CSS
       return (
         <div>
-        <div className={`message ${messageClass}`}>
-        <img className="chat-profile"
-        src={
-          photoURL ||
-          "https://api.adorable.io/avatars/23/abott@adorable.png"
-        }
-        alt=""
-        />
-        <p>{text}</p>
-        </div>
+          <div className={`message ${messageClass}`}>
+            <img className="chat-profile"
+            src={
+              photoURL ||
+              "https://api.adorable.io/avatars/23/abott@adorable.png"
+            }
+            alt=""
+            />
+            <p>{text}</p>
+          </div>
         </div>
       );
     }

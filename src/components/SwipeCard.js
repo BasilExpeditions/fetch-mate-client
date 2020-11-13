@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
 import { withRouter, Link } from "react-router-dom";
 import TinderCard from 'react-tinder-card';

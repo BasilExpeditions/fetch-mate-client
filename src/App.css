@@ -46,9 +46,6 @@ main::-webkit-scrollbar-thumb {
 }
 
 button {
-  background-color: #282c34; /* Green */
-  border: 3px solid white;
-  color: white;
   padding: 6px 37px;
   text-align: center;
   text-decoration: none;
@@ -75,6 +72,17 @@ button:disabled {
 
 .editProfile {
   text-align: center;
+}
+
+.editInput {
+  height: 50px;
+  width: 350px;
+  font-size: 100%;
+  margin-bottom: 30px;
+}
+
+.inputDiv {
+  margin-top: 30px;
 }
 
 .profilePic {
@@ -150,9 +158,7 @@ strong {
   width: 160px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
 } */
-/* .buttons button:hover {
-  transform: scale(1.05);
-} */
+
 @keyframes popup {
   0%   { transform: scale(1,1) }
   10%  { transform: scale(1.1,1.1) }
@@ -161,6 +167,17 @@ strong {
   57%  { transform: scale(1,1) }
   64%  { transform: scale(1,1) }
   100% { transform: scale(1,1) }
+}
+
+form {
+  height: 100%;
+  background-color: white;
+  color: grey;
+  max-width: 960px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
 }
 
 /* =============== SwipeCard =============== */
@@ -172,6 +189,8 @@ strong {
   max-width: 960px;
   background-color: white;
   align-items: center;
+  box-shadow: 0px 0px 20px #795548;
+  height: 83.5vh;
 }
 
 .fetchmate {
@@ -181,11 +200,6 @@ strong {
   display: grid;
   max-width: 960px;
   color: white;
-}
-
-.container-swipecard {
-  box-shadow: 0px 0px 20px #795548;
-  height: 83.5vh;
 }
 
 .swipe-tab {
@@ -199,22 +213,29 @@ strong {
 }
 
 .left-button, .right-button {
-  margin: 10px;
-  margin-top: 40px;
+  margin-left: auto;
 }
 
 .left-button {
-  background: red;
+  background: white;
   border: 3px solid red;
-  border-radius: 20px;
+  border-radius: 60px;
   outline: none;
+  color: red;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin-right: 20px;
 }
 
 .right-button {
-  background: green;
+  background: white;
   border: 3px solid green;
-  border-radius: 20px;
+  border-radius: 60px;
   outline: none;
+  color: green;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin-left: 20px;
 }
 
 .card h3 {
@@ -256,39 +277,37 @@ strong {
   border-radius: 10px;
   display: grid;
   box-shadow: 0px 0px 10px #795548;
+  margin-top: 100px;
 }
 
 /* =============== Signin =============== */
 
-div.container-signin {
+.container-signin {
+  justify-items: center;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.container-signin {
-  justify-items: center;
-  justify-content: center;
   display: grid;
   background-color: white;
-  align-items: center;
+  height: 100vh;
+  box-shadow: 0px 0px 20px #795548;
 }
 
-form {
-  height: 100%;
+form.signin {
+  height: 160px;
+}
+
+h1.signin-fetchmate {
+  margin-top: 100%;
+  font-size: 550%;
+  text-shadow: 2px 5px 5px lightgrey;
+  color: #ec2d6e;
+}
+
+button.signin-button, button.google-login-button, button.signup-button {
   background-color: white;
-  color: grey;
-  max-width: 960px;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
-}
-
-button.signin-button {
-  background: -moz-linear-gradient(left,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #743ad5;
+  border: 1px solid #743ad5;
   border-radius: 50px;
   outline: none;
   margin: 0 auto;
@@ -298,37 +317,43 @@ button.signin-button {
   margin-bottom: 10px;
 }
 
-button.google-login-button {
-  background-color: white;
-  color: red;
-  border: 1px solid red;
+button.signin-button:hover, button.google-login-button:hover {
+  transition: 0.3s;
+  background: linear-gradient(to left, #743ad5, #d53a9d);
   border-radius: 50px;
   outline: none;
-  max-width: 960px;
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
-  width: 260px;
-  padding: 0.9em;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  color: white;
+  border: none;
 }
+
+button.signup-button {
+  background: linear-gradient(to left, #743ad5, #d53a9d);
+  border-radius: 50px;
+  outline: none;
+  color: white;
+  border: none;
+}
+
+a.navlink-signup {
+  color: white;
+}
+
+
 
 input.signin-input {
   line-height: 1.5;
-  width: 100%;
   font-size: 1.1rem;
   background: white;
   color: lightgrey;
   outline: none;
-  border: 1px solid red;
-  padding: 5px;
+  border: 1px solid grey;
   margin: 10px;
   border-radius: 50px;
   text-align: center;
   width: 250px;
   padding: 0.5em;
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
 }

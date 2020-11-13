@@ -26,53 +26,55 @@ import ProfilePic from './img/profilepicco.jpg'
       })
     }
 
-    renderEditView = () => {
-      return (
+renderEditView = () => {
+  return (
+    <div className="inputDiv">
       <div className='editProfile'>
         <h1 className="profileNameUser">Username:</h1>
-        <input
-          className="editInput"
-          type="text"
-          defaultValue={this.state.name}
-          ref="theNameInput"
-        />
-        <h1 className="profileNameUser">Description:</h1>
-        <input
-          className="editInput"
-          type="text"
-          defaultValue={this.state.description}
-          ref="theDescriptionInput"
-        />
+          <input
+            className="editInput"
+            type="text"
+            defaultValue={this.state.name}
+            ref="theNameInput"
+          />
+          <h1 className="profileNameUser">Description:</h1>
+          <input
+            className="editInput"
+            type="text"
+            defaultValue={this.state.description}
+            ref="theDescriptionInput"
+          />
         <div>
-        <button onClick={this.changeEditMode}>Cancel</button>
-        <button onClick={this.updateComponentValue}>OK</button>
+          <button onClick={this.changeEditMode}>Cancel</button>
+          <button onClick={this.updateComponentValue}>OK</button>
         </div>
       </div>
-      )
-    }
+    </div>
+  )
+}
 
-    renderDefaultView = () => {
-      return(
-        <div className="App">
-          <nav>
-            <button><Link to="/">Fetch Swipe</Link></button>
-            <button
-              onClick={() => {
-                auth.signOut()
-              }}
-            ><Link to="/">
-              Sign out</Link>
-            </button>
-            <button><Link to="/chat">Fetch Chat</Link></button>
-          </nav>
-            <div className="profilePic">
-              <div>
-                <img
-                className="biggerProfilePic"
-                src={ProfilePic}
-                alt="Profile " />
-              </div>
-            </div>
+renderDefaultView = () => {
+  return(
+    <div className="App">
+      <nav>
+        <button><Link to="/">Fetch Swipe</Link></button>
+        <button
+          onClick={() => {
+            auth.signOut()
+          }}
+        ><Link to="/">
+          Sign out</Link>
+        </button>
+        <button><Link to="/chat">Fetch Chat</Link></button>
+      </nav>
+        <div className="profilePic">
+          <div>
+            <img
+            className="biggerProfilePic"
+            src={ProfilePic}
+            alt="Profile " />
+          </div>
+        </div>
             <div>
               <form>
                 <h3 className="profileUsername" onDoubleClick={this.changeEditMode}>{this.state.name}</h3>

@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import SaveCurrentLocation from "./navigation/SaveCurrentLocation";
-import GetNearbyUsers from "./navigation/GetNearbyUsers";
 import { withRouter, Link } from "react-router-dom";
 import TinderCard from 'react-tinder-card';
 

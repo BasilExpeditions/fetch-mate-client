@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 body {
   background: linear-gradient(to right, #5c258d, #4389a2);
   margin: 0 auto;
@@ -15,84 +17,6 @@ h1 {
   font-family: 'Lobster', cursive;
   font-size: 350%;
   color: #f02f17;
-}
-
-.profileNameUser{
-    font-family: 'Lobster', cursive;
-    font-size: 150%;
-    color: #f02f17;
-    margin-top: -15px;
-}
-
-h2.infoText {
-  color: #f02f17;
-}
-
-a {
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-main::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-main::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-main::-webkit-scrollbar-thumb {
-  background: #6649b8;
-}
-
-button {
-  padding: 6px 37px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 1.25rem;
-}
-
-button:disabled {
-  cursor: not-allowed;
-}
-
-.sign-in {
-  color: #282c34;
-  background: white;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.biggerProfilePic {
-  max-width: 350px;
-  max-height: 350px;
-}
-
-.editProfile {
-  text-align: center;
-}
-
-.editInput {
-  height: 50px;
-  width: 350px;
-  font-size: 100%;
-  margin-bottom: 30px;
-}
-
-.inputDiv {
-  margin-top: 30px;
-}
-
-.profilePic {
-  margin-top: 5em;
-}
-
-.profileUsername {
-  font-family: 'Lobster', cursive;
-  font-size: 250%;
-  color: black;
 }
 
 ul, li {
@@ -140,25 +64,6 @@ strong {
   animation-duration: 800ms;
 }
 
-/* .buttons {
-  margin: 20px;
-  display: flex;
-} */
-/* .buttons button {
-  flex-shrink: 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  background-color: #9198e5;
-  transition: 200ms;
-  margin: 0 10px;
-  font-weight: bolder;
-  width: 160px;
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
-} */
-
 @keyframes popup {
   0%   { transform: scale(1,1) }
   10%  { transform: scale(1.1,1.1) }
@@ -169,7 +74,7 @@ strong {
   100% { transform: scale(1,1) }
 }
 
-form {
+/* form {
   height: 100%;
   background-color: white;
   color: grey;
@@ -178,7 +83,7 @@ form {
   justify-content: center;
   justify-items: center;
   margin: 0 auto;
-}
+} */
 
 /* =============== SwipeCard =============== */
 
@@ -202,7 +107,7 @@ form {
   color: white;
 }
 
-.swipe-tab {
+.swipe-tab, .profile-tab {
   max-width: 960px;
   height: 15vh;
   margin: 0 auto;
@@ -338,8 +243,6 @@ a.navlink-signup {
   color: white;
 }
 
-
-
 input.signin-input {
   line-height: 1.5;
   font-size: 1.1rem;
@@ -456,7 +359,7 @@ h2.chat-tab-username {
   margin-left: 712px;
 }
 
-.nav-profile, .nav-swipe, .nav-chat {
+.nav-profile, .nav-swipe, .nav-chat, .nav-signout {
   background: white;
   border: none;
   padding: 20px;
@@ -476,19 +379,30 @@ a.navlink {
   padding-bottom: 0;
 }
 
+
 /* =============== Profile =============== */
 
-.App {
-  text-align: center;
+.container-profile {
+  justify-items: center;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  background: white;
+  display: grid;
+  background-color: white;
   height: 100vh;
   box-shadow: 0px 0px 20px #795548;
 }
 
-.App header {
+h1.fetchmate-profile {
+  margin-top: -60px;
+  justify-items: center;
+  justify-content: center;
+  display: grid;
+  max-width: 960px;
+  color: white;
+}
+
+/* .App header {
   background-color: #181717;
   height: 10vh;
   min-height: 50px;
@@ -503,12 +417,102 @@ a.navlink {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+} */
+
+.profileNameUser {
+  width: 450px;
+  font-family: 'Karla', sans-serif;
+  text-align: center;
+  font-size: 150%;
+  color: black;
+  margin-top: -15px;
 }
 
-.App section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+h2.infoText {
+  color: #f02f17;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+button {
+  padding: 6px 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.sign-in {
+  color: #282c34;
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.main-profile-img {
+  height: 450px;
+  box-shadow: 0px 0px 15px lightgrey;
+}
+
+.editProfile {
+  text-align: center;
+}
+
+.editInput {
+  height: 50px;
+  width: 350px;
+  font-size: 100%;
+  margin-bottom: 30px;
+}
+
+.inputDiv {
+  margin-top: 30px;
+}
+
+.profilePic {
+  margin-top: 5em;
+}
+
+.profile-username {
+  font-family: sans-serif;
+  font-size: 250%;
+  color: grey;
+  margin-top: 0;
+}
+
+.profile-buttons {
+  margin: 5px;
+  border-radius: 30px;
+  background: #ff9472;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}
+
+.profile-form {
+  background-color: white;
+  max-width: 960px;
+  display: grid;
+  justify-items: center;
+  margin: 0 auto
 }

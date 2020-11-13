@@ -10,9 +10,9 @@ import doggo1 from './img/doggo1.jpeg'
 import doggo2 from './img/doggo2.jpeg'
 import doggo3 from './img/doggo3.jpg'
 
-  //async function on the home page
-  // GetNearbyUsers();
-  // SaveCurrentLocation();
+//async function on the home page
+// GetNearbyUsers();
+// SaveCurrentLocation();
 
 
 import '../App.css'
@@ -52,7 +52,7 @@ function SwipeCard () {
   const [characters, setCharacters,] = useState(db)
   const [lastDirection, setLastDirection] = useState()
 
-///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////
   // const [users, setUsers] = useState([])
   // const [saveUser, setSaveUser] = useState()
 
@@ -71,7 +71,7 @@ function SwipeCard () {
   //   GetNearbyUsers(result).then(setUsers(...users, result))
   // }
 
-/////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////
 
   // useMemo is a React hook that memorizes the output of a function.
   const childRefs = useMemo(() => Array(db.length).fill(0).map(i => React.createRef()), [])
@@ -100,34 +100,34 @@ function SwipeCard () {
 
 
 
-    return (
-        <div className="container">
-        <div className="swipe-tab">
-          <nav className="nav">
-            <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
-            <button className="nav-chat"><Link className="navlink" to="/chat">Chat</Link></button>
-          </nav>
-          <h1 className="fetchmate">Fetchmate</h1>
-          </div>
-          <div className="container-swipecard">
-            <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-            <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-            <div className='cardContainer'>
-              {characters.map((character, index) =>
-                <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-                  <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-                    <h3>{character.name}</h3>
-                  </div>
-                </TinderCard>
-              )}
-            </div>
-          <div className='buttons'>
-            <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
-            <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
-          </div>
+  return (
+    <div className="container">
+    <div className="swipe-tab">
+    <nav className="nav">
+    <button className="nav-profile"><Link className="navlink" to="/profile">Profile</Link></button>
+    <button className="nav-chat"><Link className="navlink" to="/chat">Chat</Link></button>
+    </nav>
+    <h1 className="fetchmate">Fetchmate</h1>
+    </div>
+    <div className="container-swipecard">
+    <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+    <div className='cardContainer'>
+    {characters.map((character, index) =>
+      <TinderCard ref={childRefs[index]} className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+      <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+      <h3>{character.name}</h3>
       </div>
-      {console.log(lastDirection)}
-  </div>
+      </TinderCard>
+    )}
+    </div>
+    <div className='buttons'>
+    <button className="left-button" onClick={() => swipe('left')}>Swipe left!</button>
+    <button className="right-button" onClick={() => swipe('right')}>Swipe right!</button>
+    </div>
+    </div>
+    {console.log(lastDirection)}
+    </div>
   )
 }
 

@@ -74,7 +74,7 @@ strong {
   100% { transform: scale(1,1) }
 }
 
-/* form {
+form {
   height: 100%;
   background-color: white;
   color: grey;
@@ -83,7 +83,7 @@ strong {
   justify-content: center;
   justify-items: center;
   margin: 0 auto;
-} */
+}
 
 /* =============== SwipeCard =============== */
 
@@ -310,6 +310,7 @@ img.chat-profile {
 
 .chat-form {
   display: flex;
+  background: white;
   padding: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
